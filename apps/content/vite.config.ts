@@ -8,9 +8,6 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    microfrontends({
-      basePath: '/_content',
-    }) as Plugin,
     react(),
     federation({
       name: 'content',

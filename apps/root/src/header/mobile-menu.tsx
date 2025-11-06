@@ -12,15 +12,15 @@ export function MobileMenu({
     >
       <div className="fixed inset-y-0 top-0 right-0 w-full min-h-svh max-w-xs bg-background p-6 shadow-lg">
         <div className="flex items-center justify-between">
-          <a className="flex items-center gap-2" href="/" onClick={onClose}>
+          <a className="flex items-center gap-0.5" href="/" onClick={onClose}>
             <img
-              alt="Logo"
+              alt="Tribux Logo"
               className="rounded"
               height="32"
-              src="/abstract-geometric-logo.png"
+              src="/logo.webp"
               width="32"
             />
-            <span className="text-xl font-bold">Company</span>
+            <span className="text-xl font-bold">ribux</span>
           </a>
           <button
             className="inline-flex h-9 items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -52,28 +52,28 @@ export function MobileMenu({
             href="#features"
             onClick={onClose}
           >
-            Features
+            Características
           </a>
           <a
             className="text-base font-medium hover:text-primary"
             href="#testimonials"
             onClick={onClose}
           >
-            Testimonials
+            Testimonios
           </a>
           <a
             className="text-base font-medium hover:text-primary"
             href="#pricing"
             onClick={onClose}
           >
-            Pricing
+            Precios
           </a>
           <a
             className="text-base font-medium hover:text-primary"
             href="#about"
             onClick={onClose}
           >
-            About
+            Acerca de
           </a>
           <div className="mt-4 flex flex-col gap-2">
             <button
@@ -81,14 +81,14 @@ export function MobileMenu({
               onClick={onClose}
               type="button"
             >
-              Log in
+              Iniciar Sesión
             </button>
             <button
               className="inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
               onClick={onClose}
               type="button"
             >
-              Sign up
+              Registrarse
             </button>
           </div>
         </nav>

@@ -3,6 +3,9 @@
   "tasks": {
     "build": {
       "cache": false
+    },
+    "proxy": {
+      "cache": false
     }
   }
 }

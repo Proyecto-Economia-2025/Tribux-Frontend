@@ -15,12 +15,11 @@ function Landing(): React.JSX.Element {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                    Your Product, Your Vision, Our Platform
+                    Análisis Económico Avanzado con Tribux
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Empower your business with our cutting-edge solution.
-                    Streamline workflows, boost productivity, and achieve your
-                    goals.
+                    Potencia tu comprensión de la economía con nuestra plataforma de análisis avanzado.
+                    Visualiza datos, predice tendencias y toma decisiones informadas.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -28,7 +27,7 @@ function Landing(): React.JSX.Element {
                     className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 gap-1"
                     type="button"
                   >
-                    Get Started
+                    Comenzar
                     <svg
                       className="h-4 w-4"
                       fill="none"
@@ -49,17 +48,18 @@ function Landing(): React.JSX.Element {
                     className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-muted"
                     type="button"
                   >
-                    Learn More
+                    Saber Más
                   </button>
                 </div>
               </div>
               <div className="flex items-center justify-center">
                 <img
-                  alt="Product Dashboard"
-                  className="rounded-lg object-cover"
+                  alt="Dashboard de Análisis Económico Tribux"
+                  className="rounded-xl object-cover shadow-2xl hover:shadow-3xl transition-all duration-300 border border-gray-200/20"
                   height="550"
                   src="product-dashboard-overview.png"
                   width="550"
+                  loading="eager"
                 />
               </div>
             </div>
@@ -71,11 +71,10 @@ function Landing(): React.JSX.Element {
           <div className="container px-4 md:px-6">
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Key Features
+                Características Principales
               </h2>
               <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
-                Discover the powerful features that set our platform apart from
-                the competition.
+                Descubre las poderosas características que hacen de Tribux la mejor herramienta para análisis económico.
               </p>
             </div>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -97,10 +96,9 @@ function Landing(): React.JSX.Element {
                     <path d="m9 11 3 3L22 4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold">Intuitive Interface</h3>
+                <h3 className="text-xl font-bold">Interfaz Intuitiva</h3>
                 <p className="text-muted-foreground">
-                  Our user-friendly interface makes navigation and operation a
-                  breeze for all users.
+                  Nuestra interfaz amigable hace que la navegación y operación sea sencilla para todos los usuarios.
                 </p>
               </div>
               <div className="flex flex-col items-start gap-2 rounded-lg border bg-background p-6 shadow-sm">
@@ -121,10 +119,9 @@ function Landing(): React.JSX.Element {
                     <path d="m9 11 3 3L22 4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold">Advanced Analytics</h3>
+                <h3 className="text-xl font-bold">Análisis Avanzado</h3>
                 <p className="text-muted-foreground">
-                  Gain valuable insights with our comprehensive analytics and
-                  reporting tools.
+                  Obtén insights valiosos con nuestras herramientas completas de análisis y reportes.
                 </p>
               </div>
               <div className="flex flex-col items-start gap-2 rounded-lg border bg-background p-6 shadow-sm">
@@ -145,10 +142,9 @@ function Landing(): React.JSX.Element {
                     <path d="m9 11 3 3L22 4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold">Seamless Integration</h3>
+                <h3 className="text-xl font-bold">Integración Perfecta</h3>
                 <p className="text-muted-foreground">
-                  Easily integrate with your existing tools and workflows
-                  without disruption.
+                  Integra fácilmente con tus herramientas existentes sin interrupciones.
                 </p>
               </div>
               <div className="flex flex-col items-start gap-2 rounded-lg border bg-background p-6 shadow-sm">
@@ -169,10 +165,9 @@ function Landing(): React.JSX.Element {
                     <path d="m9 11 3 3L22 4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold">Real-time Collaboration</h3>
+                <h3 className="text-xl font-bold">Colaboración en Tiempo Real</h3>
                 <p className="text-muted-foreground">
-                  Work together with your team in real-time, no matter where
-                  they are located.
+                  Trabaja con tu equipo en tiempo real, sin importar dónde estén ubicados.
                 </p>
               </div>
               <div className="flex flex-col items-start gap-2 rounded-lg border bg-background p-6 shadow-sm">
@@ -193,10 +188,9 @@ function Landing(): React.JSX.Element {
                     <path d="m9 11 3 3L22 4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold">Automated Workflows</h3>
+                <h3 className="text-xl font-bold">Flujos de Trabajo Automatizados</h3>
                 <p className="text-muted-foreground">
-                  Save time and reduce errors with our intelligent automation
-                  capabilities.
+                  Ahorra tiempo y reduce errores con nuestras capacidades de automatización inteligente.
                 </p>
               </div>
               <div className="flex flex-col items-start gap-2 rounded-lg border bg-background p-6 shadow-sm">
@@ -217,10 +211,9 @@ function Landing(): React.JSX.Element {
                     <path d="m9 11 3 3L22 4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold">Enterprise Security</h3>
+                <h3 className="text-xl font-bold">Seguridad Empresarial</h3>
                 <p className="text-muted-foreground">
-                  Rest easy knowing your data is protected by industry-leading
-                  security measures.
+                  Mantén la calma sabiendo que tus datos están protegidos por medidas de seguridad líderes en la industria.
                 </p>
               </div>
             </div>
@@ -232,32 +225,31 @@ function Landing(): React.JSX.Element {
           <div className="container px-4 md:px-6">
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                What Our Clients Say
+                Lo que Dicen Nuestros Usuarios
               </h2>
               <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
-                Don&apos;t just take our word for it. Here&apos;s what our
-                clients have to say about our platform.
+                No solo nos creas a nosotros. Aquí está lo que nuestros usuarios dicen sobre Tribux.
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               <div className="rounded-lg border bg-background p-6 shadow-sm">
                 <div className="flex flex-col gap-4">
                   <p className="text-muted-foreground">
-                    &quot;This platform has completely transformed how we
-                    operate. The efficiency gains have been remarkable.&quot;
+                    &quot;Tribux ha transformado completamente cómo analizamos los datos económicos. La eficiencia ha sido notable.&quot;
                   </p>
                   <div className="flex items-center gap-4">
                     <img
-                      alt="Sarah Johnson"
-                      className="rounded-full"
-                      height="40"
+                      alt="Foto de perfil de Antony Monge"
+                      className="rounded-full ring-2 ring-primary/20 shadow-md hover:ring-primary/40 transition-all duration-200"
+                      height="48"
                       src="thoughtful-artist.png"
-                      width="40"
+                      width="48"
+                      loading="lazy"
                     />
                     <div>
-                      <p className="font-medium">Sarah Johnson</p>
+                      <p className="font-medium">Antony Monge</p>
                       <p className="text-sm text-muted-foreground">
-                        CEO, TechCorp
+                        Economista, Universidad Nacional
                       </p>
                     </div>
                   </div>
@@ -266,21 +258,21 @@ function Landing(): React.JSX.Element {
               <div className="rounded-lg border bg-background p-6 shadow-sm">
                 <div className="flex flex-col gap-4">
                   <p className="text-muted-foreground">
-                    &quot;The intuitive interface and powerful features make
-                    this the perfect solution for our team&apos;s needs.&quot;
+                    &quot;La interfaz intuitiva y las funciones poderosas hacen que Tribux sea la solución perfecta para nuestras necesidades de investigación económica.&quot;
                   </p>
                   <div className="flex items-center gap-4">
                     <img
-                      alt="Michael Chen"
-                      className="rounded-full"
-                      height="40"
+                      alt="Foto de perfil de Carlos López"
+                      className="rounded-full ring-2 ring-primary/20 shadow-md hover:ring-primary/40 transition-all duration-200"
+                      height="48"
                       src="thoughtful-artist.png"
-                      width="40"
+                      width="48"
+                      loading="lazy"
                     />
                     <div>
-                      <p className="font-medium">Michael Chen</p>
+                      <p className="font-medium">Carlos López</p>
                       <p className="text-sm text-muted-foreground">
-                        CTO, InnovateCo
+                        Investigador, Banco Central
                       </p>
                     </div>
                   </div>
@@ -289,21 +281,21 @@ function Landing(): React.JSX.Element {
               <div className="rounded-lg border bg-background p-6 shadow-sm">
                 <div className="flex flex-col gap-4">
                   <p className="text-muted-foreground">
-                    &quot;Customer support is exceptional. Any issues we&apos;ve
-                    had were resolved quickly and professionally.&quot;
+                    &quot;El soporte al cliente es excepcional. Cualquier problema que hemos tenido se resolvió rápida y profesionalmente.&quot;
                   </p>
                   <div className="flex items-center gap-4">
                     <img
-                      alt="Emily Rodriguez"
-                      className="rounded-full"
-                      height="40"
+                      alt="Foto de perfil de María Rodríguez"
+                      className="rounded-full ring-2 ring-primary/20 shadow-md hover:ring-primary/40 transition-all duration-200"
+                      height="48"
                       src="thoughtful-artist.png"
-                      width="40"
+                      width="48"
+                      loading="lazy"
                     />
                     <div>
-                      <p className="font-medium">Emily Rodriguez</p>
+                      <p className="font-medium">María Rodríguez</p>
                       <p className="text-sm text-muted-foreground">
-                        Operations Manager, GrowthInc
+                        Analista, Ministerio de Economía
                       </p>
                     </div>
                   </div>
@@ -318,26 +310,25 @@ function Landing(): React.JSX.Element {
           <div className="container px-4 md:px-6">
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Simple, Transparent Pricing
+                Precios Transparentes y Simples
               </h2>
               <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
-                Choose the plan that&apos;s right for your business. All plans
-                include a 14-day free trial.
+                Elige el plan que mejor se adapte a tus necesidades.
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-3">
               {/* Basic Plan */}
               <div className="flex flex-col rounded-lg border bg-background shadow transition-all hover:shadow-lg">
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold">Basic</h3>
+                  <h3 className="text-2xl font-bold">Básico</h3>
                   <div className="mt-4 flex items-baseline text-gray-900">
                     <span className="text-5xl font-extrabold tracking-tight">
                       $29
                     </span>
-                    <span className="ml-1 text-xl font-semibold">/month</span>
+                    <span className="ml-1 text-xl font-semibold">/mes</span>
                   </div>
                   <p className="mt-4 text-muted-foreground">
-                    Perfect for small teams and startups.
+                    Perfecto para investigadores individuales y pequeños equipos.
                   </p>
                   <ul className="mt-6 space-y-4">
                     <li className="flex items-center">
@@ -356,7 +347,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Up to 5 team members</span>
+                      <span>Hasta 5 miembros del equipo</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -374,7 +365,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>20GB storage</span>
+                      <span>20GB almacenamiento</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -392,7 +383,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Basic analytics</span>
+                      <span>Análisis básico</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -406,11 +397,11 @@ function Landing(): React.JSX.Element {
                         viewBox="0 0 24 24"
                         width="24"
                         xmlns="http://www.w3.org/2000/svg"
-                      >
+                    >
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Email support</span>
+                      <span>Soporte por email</span>
                     </li>
                   </ul>
                 </div>
@@ -419,7 +410,7 @@ function Landing(): React.JSX.Element {
                     className="w-full rounded-md border border-primary bg-background px-4 py-2 text-sm font-medium text-primary shadow-sm hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                     type="button"
                   >
-                    Start Free Trial
+                    Comenzar Prueba Gratuita
                   </button>
                 </div>
               </div>
@@ -428,7 +419,7 @@ function Landing(): React.JSX.Element {
               <div className="flex flex-col rounded-lg border-2 border-primary bg-background shadow-lg transition-all hover:shadow-xl">
                 <div className="p-6">
                   <div className="flex justify-between items-center">
-                    <h3 className="text-2xl font-bold">Pro</h3>
+                    <h3 className="text-2xl font-bold">Profesional</h3>
                     <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                       Popular
                     </span>
@@ -437,10 +428,10 @@ function Landing(): React.JSX.Element {
                     <span className="text-5xl font-extrabold tracking-tight">
                       $79
                     </span>
-                    <span className="ml-1 text-xl font-semibold">/month</span>
+                    <span className="ml-1 text-xl font-semibold">/mes</span>
                   </div>
                   <p className="mt-4 text-muted-foreground">
-                    Ideal for growing businesses and teams.
+                    Ideal para empresas y equipos en crecimiento.
                   </p>
                   <ul className="mt-6 space-y-4">
                     <li className="flex items-center">
@@ -459,7 +450,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Up to 20 team members</span>
+                      <span>Hasta 20 miembros del equipo</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -477,7 +468,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>100GB storage</span>
+                      <span>100GB almacenamiento</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -495,7 +486,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Advanced analytics</span>
+                      <span>Análisis avanzado</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -513,7 +504,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Priority support</span>
+                      <span>Soporte prioritario</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -531,7 +522,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Custom integrations</span>
+                      <span>Integraciones personalizadas</span>
                     </li>
                   </ul>
                 </div>
@@ -540,7 +531,7 @@ function Landing(): React.JSX.Element {
                     className="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                     type="button"
                   >
-                    Start Free Trial
+                    Comenzar Prueba Gratuita
                   </button>
                 </div>
               </div>
@@ -548,15 +539,15 @@ function Landing(): React.JSX.Element {
               {/* Enterprise Plan */}
               <div className="flex flex-col rounded-lg border bg-background shadow transition-all hover:shadow-lg">
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold">Enterprise</h3>
+                  <h3 className="text-2xl font-bold">Empresarial</h3>
                   <div className="mt-4 flex items-baseline text-gray-900">
                     <span className="text-5xl font-extrabold tracking-tight">
                       $199
                     </span>
-                    <span className="ml-1 text-xl font-semibold">/month</span>
+                    <span className="ml-1 text-xl font-semibold">/mes</span>
                   </div>
                   <p className="mt-4 text-muted-foreground">
-                    For large organizations with advanced needs.
+                    Para grandes organizaciones con necesidades avanzadas.
                   </p>
                   <ul className="mt-6 space-y-4">
                     <li className="flex items-center">
@@ -575,7 +566,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Unlimited team members</span>
+                      <span>Miembros del equipo ilimitados</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -593,7 +584,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>1TB storage</span>
+                      <span>1TB almacenamiento</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -611,7 +602,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Enterprise analytics</span>
+                      <span>Análisis empresarial</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -629,7 +620,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>24/7 dedicated support</span>
+                      <span>Soporte dedicado 24/7</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -647,7 +638,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>Custom development</span>
+                      <span>Desarrollo personalizado</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -665,7 +656,7 @@ function Landing(): React.JSX.Element {
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <path d="m9 11 3 3L22 4" />
                       </svg>
-                      <span>SLA guarantees</span>
+                      <span>Garantías SLA</span>
                     </li>
                   </ul>
                 </div>
@@ -674,21 +665,21 @@ function Landing(): React.JSX.Element {
                     className="w-full rounded-md border border-primary bg-background px-4 py-2 text-sm font-medium text-primary shadow-sm hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                     type="button"
                   >
-                    Contact Sales
+                    Contactar Ventas
                   </button>
                 </div>
               </div>
             </div>
             <div className="mt-12 text-center">
               <p className="text-muted-foreground">
-                Need a custom plan?
+                ¿Necesitas un plan personalizado?
                 <a
                   className="font-medium text-primary hover:underline"
                   href="/"
                 >
-                  Contact us
+                  Contáctanos
                 </a>
-                for a tailored solution.
+                para una solución a medida.
               </p>
             </div>
           </div>
@@ -699,40 +690,30 @@ function Landing(): React.JSX.Element {
           <div className="container px-4 md:px-6">
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                About Our Company
+                Acerca de Nuestra Empresa
               </h2>
               <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
-                We&apos;re on a mission to transform how businesses operate with
-                innovative solutions.
+                Estamos en una misión para transformar cómo operan las empresas con
+                soluciones innovadoras.
               </p>
             </div>
 
             <div className="grid gap-12 md:grid-cols-2 lg:gap-16">
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold">Our Story</h3>
+                <h3 className="text-2xl font-bold">Nuestra Historia</h3>
                 <p className="text-muted-foreground">
-                  Founded in 2010, our company began with a simple idea: to
-                  create software that actually helps businesses grow. What
-                  started as a small team of passionate developers has grown
-                  into a global company serving thousands of customers across
-                  various industries.
+                  Tribux nació en 2023 como una iniciativa de estudiantes de economía de la Universidad Nacional de Costa Rica, con la visión de hacer el análisis económico accesible y poderoso para todos. Comenzamos con una idea simple: desarrollar herramientas que permitan a investigadores, empresas y gobiernos tomar decisiones informadas basadas en datos económicos precisos. Lo que inició como un proyecto académico ha evolucionado en una plataforma líder en análisis económico avanzado, atendiendo a cientos de usuarios en América Latina y más allá.
                 </p>
                 <p className="text-muted-foreground">
-                  Our journey has been defined by continuous innovation,
-                  customer-centric development, and a commitment to excellence.
-                  We believe that technology should empower businesses, not
-                  complicate them.
+                  Nuestro viaje ha sido impulsado por la pasión por la economía y la creencia en el poder de los datos para transformar decisiones. Hemos crecido de un equipo pequeño a una empresa innovadora, manteniendo siempre nuestro compromiso con la precisión, la accesibilidad y el impacto real.
                 </p>
 
-                <h3 className="text-2xl font-bold mt-8">Our Mission</h3>
+                <h3 className="text-2xl font-bold mt-8">Nuestra Misión</h3>
                 <p className="text-muted-foreground">
-                  We&apos;re on a mission to democratize access to powerful
-                  business tools. We believe that every organization, regardless
-                  of size or budget, deserves access to technology that can
-                  transform their operations and drive growth.
+                  En Tribux, nuestra misión es democratizar el acceso al análisis económico avanzado, proporcionando herramientas intuitivas y poderosas que permitan a cualquier persona, desde estudiantes hasta profesionales experimentados, comprender y predecir tendencias económicas con confianza. Creemos que el conocimiento económico debe ser accesible para todos, independientemente de su formación técnica o recursos disponibles.
                 </p>
 
-                <h3 className="text-2xl font-bold mt-8">Our Values</h3>
+                <h3 className="text-2xl font-bold mt-8">Nuestros Valores</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-start">
                     <svg
@@ -750,8 +731,7 @@ function Landing(): React.JSX.Element {
                       <path d="m5 12 5 5L20 7" />
                     </svg>
                     <span>
-                      <strong>Innovation:</strong> We constantly push the
-                      boundaries of what&apos;s possible.
+                      <strong>Innovación:</strong> Constantemente exploramos nuevas metodologías y tecnologías para mejorar el análisis económico.
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -770,8 +750,7 @@ function Landing(): React.JSX.Element {
                       <path d="m5 12 5 5L20 7" />
                     </svg>
                     <span>
-                      <strong>Integrity:</strong> We operate with transparency
-                      and honesty in all we do.
+                      <strong>Precisión:</strong> Nos comprometemos con la exactitud y fiabilidad de nuestros datos y modelos.
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -790,8 +769,7 @@ function Landing(): React.JSX.Element {
                       <path d="m5 12 5 5L20 7" />
                     </svg>
                     <span>
-                      <strong>Customer Focus:</strong> Our customers&apos;
-                      success is our success.
+                      <strong>Accesibilidad:</strong> Hacemos que el análisis económico complejo sea simple y comprensible para todos.
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -810,45 +788,76 @@ function Landing(): React.JSX.Element {
                       <path d="m5 12 5 5L20 7" />
                     </svg>
                     <span>
-                      <strong>Excellence:</strong> We strive for excellence in
-                      everything we do.
+                      <strong>Impacto:</strong> Buscamos generar un impacto positivo en la toma de decisiones económicas a nivel individual y societal.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      className="size-5 text-primary mr-2 mt-0.5"
+                      fill="none"
+                      height="24"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="m5 12 5 5L20 7" />
+                    </svg>
+                    <span>
+                      <strong>Colaboración:</strong> Fomentamos el trabajo en equipo y el intercambio de conocimientos en la comunidad económica.
                     </span>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <div className="relative h-[400px] overflow-hidden rounded-lg">
+                <div className="relative h-[400px] overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 group">
                   <img
-                    alt="Our Team"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    alt="Equipo de Tribux trabajando juntos"
+                    className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                     src="team-photo.jpg"
+                    loading="lazy"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
                 <div className="mt-12">
-                  <h3 className="text-2xl font-bold mb-6">Leadership Team</h3>
+                  <h3 className="text-2xl font-bold mb-6">Equipo de Liderazgo</h3>
                   <div className="grid gap-8 sm:grid-cols-2">
                     <div className="flex flex-col items-center text-center">
-                      <img
-                        alt="CEO Portrait"
-                        className="size-24 rounded-full object-cover mb-4"
-                        src="ceo-portrait.jpg"
-                      />
-                      <h4 className="text-lg font-bold">Sarah Johnson</h4>
+                      <div className="relative size-32 rounded-full overflow-hidden mb-4 ring-4 ring-primary/20 shadow-xl hover:ring-primary/40 hover:shadow-2xl transition-all duration-300">
+                        <div
+                          className="absolute inset-0 bg-cover bg-center"
+                          style={{
+                            backgroundImage: 'url(ceo-portrait.jpg)',
+                            filter: 'blur(8px) brightness(0.8)',
+                          }}
+                        />
+                        <img
+                          alt="Retrato de Antony Monge, CEO de Tribux"
+                          className="relative z-10 size-32 rounded-full object-contain"
+                          src="ceo-portrait.jpg"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h4 className="text-lg font-bold">Antony Monge</h4>
                       <p className="text-sm text-muted-foreground">
-                        CEO & Co-Founder
+                        CEO y Fundadora
                       </p>
                     </div>
                     <div className="flex flex-col items-center text-center">
                       <img
-                        alt="CTO Portrait"
-                        className="size-24 rounded-full object-cover mb-4"
+                        alt="Retrato de Cristopher Zúñiga, CTO de Tribux"
+                        className="size-28 rounded-full object-cover mb-4 ring-4 ring-primary/20 shadow-xl hover:ring-primary/40 hover:shadow-2xl transition-all duration-300"
                         src="cto-portrait.jpg"
+                        loading="lazy"
                       />
-                      <h4 className="text-lg font-bold">Michael Chen</h4>
+                      <h4 className="text-lg font-bold">Cristopher Zúñiga</h4>
                       <p className="text-sm text-muted-foreground">
-                        CTO & Co-Founder
+                        CTO y Co-Fundador
                       </p>
                     </div>
                   </div>
@@ -864,11 +873,11 @@ function Landing(): React.JSX.Element {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Ready to Get Started?
+                  ¿Listo para Comenzar?
                 </h2>
                 <p className="mx-auto max-w-[700px] md:text-xl">
-                  Join thousands of satisfied customers who have transformed
-                  their business with our platform.
+                  Únete a miles de clientes satisfechos que han transformado
+                  su negocio con nuestra plataforma.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -876,13 +885,13 @@ function Landing(): React.JSX.Element {
                   className="inline-flex h-10 items-center justify-center rounded-md bg-white px-8 py-2 text-sm font-medium text-primary shadow transition-colors hover:bg-white/90"
                   type="button"
                 >
-                  Start Free Trial
+                  Comenzar Prueba Gratuita
                 </button>
                 <button
                   className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-transparent px-8 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-white/10"
                   type="button"
                 >
-                  Schedule Demo
+                  Programar Demo
                 </button>
               </div>
             </div>

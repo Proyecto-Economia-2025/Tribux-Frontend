@@ -8,19 +8,19 @@ function Footer(): React.JSX.Element {
       <div className="px-4 py-12 md:px-6 md:py-16 mx-auto max-w-7xl">
         <div className="grid gap-8 grid-cols-5">
           <div className="col-span-1 sm:col-span-2 lg:col-span-2">
-            <a className="flex items-center gap-2" href="/">
+            <a className="flex items-center gap-0.5" href="/">
               <img
-                alt="Logo"
+                alt="Tribux Logo"
                 className="rounded"
                 height="32"
-                src="/abstract-geometric-logo.png"
+                src="/logo.webp"
                 width="32"
               />
-              <span className="text-xl font-bold">Company</span>
+              <span className="text-xl font-bold">ribux</span>
             </a>
             <p className="mt-4 max-w-xs text-muted-foreground">
-              Empowering businesses with innovative solutions since 2010. Your
-              success is our priority.
+              Potenciando empresas con soluciones innovadoras desde 2010. Tu
+              éxito es nuestra prioridad.
             </p>
             <div className="mt-6 flex gap-4">
               {[
@@ -118,10 +118,10 @@ function Footer(): React.JSX.Element {
           </div>
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
-              Product
+              Producto
             </h3>
             <ul className="space-y-2">
-              {['Features', 'Pricing', 'Integrations', 'FAQ', 'Changelog'].map(
+              {['Características', 'Precios', 'Integraciones', 'Preguntas Frecuentes', 'Registro de Cambios'].map(
                 (item) => (
                   <li key={item}>
                     <a
@@ -137,10 +137,10 @@ function Footer(): React.JSX.Element {
           </div>
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
-              Company
+              Empresa
             </h3>
             <ul className="space-y-2">
-              {['About', 'Blog', 'Careers', 'Press', 'Partners'].map((item) => (
+              {['Acerca de', 'Blog', 'Carreras', 'Prensa', 'Socios'].map((item) => (
                 <li key={item}>
                   <a
                     className="text-muted-foreground hover:text-foreground"
@@ -157,7 +157,7 @@ function Footer(): React.JSX.Element {
               Legal
             </h3>
             <ul className="space-y-2">
-              {['Terms', 'Privacy', 'Cookies', 'Licenses', 'Contact'].map(
+              {['Términos', 'Privacidad', 'Cookies', 'Licencias', 'Contacto'].map(
                 (item) => (
                   <li key={item}>
                     <a
@@ -174,7 +174,7 @@ function Footer(): React.JSX.Element {
         </div>
         <div className="mt-12 border-t pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Company, Inc. All rights reserved.
+            © {new Date().getFullYear()} Tribux, Inc. Todos los derechos reservados.
           </p>
         </div>
       </div>

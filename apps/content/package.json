@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite --port $(microfrontends port)",
-    "start": "vite preview --port $(microfrontends port)"
+    "dev": "vite --port 3026 --strictPort",
+    "start": "vite preview --port 3026"
   },
   "dependencies": {
     "@vercel/microfrontends": "1.2.4",

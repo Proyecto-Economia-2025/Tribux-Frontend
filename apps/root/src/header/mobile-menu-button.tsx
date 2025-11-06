@@ -11,13 +11,13 @@ export function MobileMenuButton(): React.JSX.Element {
           className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-muted"
           type="button"
         >
-          Log in
+          Iniciar Sesión
         </button>
         <button
           className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
           type="button"
         >
-          Sign up
+          Registrarse
         </button>
       </div>
       <div className="flex sm:hidden">

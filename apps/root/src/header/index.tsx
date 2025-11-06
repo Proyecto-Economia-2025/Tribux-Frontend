@@ -8,34 +8,34 @@ function Header(): React.JSX.Element {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-b-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <a className="flex items-center gap-2" href="/">
+        <a className="flex items-center gap-0.5" href="/">
           <img
-            alt="Logo"
+            alt="Tribux Logo"
             className="rounded"
             height="32"
-            src="/abstract-geometric-logo.png"
+            src="/logo.webp"
             width="32"
           />
-          <span className="text-xl font-bold">Company</span>
+          <span className="text-xl font-bold">ribux</span>
         </a>
         <nav className="hidden sm:flex gap-6 ">
           <a
             className="text-sm font-medium hover:text-primary"
             href="#features"
           >
-            Features
+            Características
           </a>
           <a
             className="text-sm font-medium hover:text-primary"
             href="#testimonials"
           >
-            Testimonials
+            Testimonios
           </a>
           <a className="text-sm font-medium hover:text-primary" href="#pricing">
-            Pricing
+            Precios
           </a>
           <a className="text-sm font-medium hover:text-primary" href="#about">
-            About
+            Acerca de
           </a>
         </nav>
         <MobileMenuButton />
