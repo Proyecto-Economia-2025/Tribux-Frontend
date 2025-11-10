@@ -26,4 +26,4 @@ Optimize prompts: be specific, define output format, split tasks, provide sample
 - `npm run dev`
 - `npm test`
 - `npm install`.
-2025-11-10 | Iniciada refactorización a diseño atómico completo. Creado paquete @tribux/ui con atoms (Button, Icon, Logo), molecules (ButtonGroup, NavLink, SocialIcon) y organisms (Header, Footer, MobileMenu). Pendiente reorganizar estructura completa del proyecto siguiendo patrón atómico con components/, hooks/, context/, lib/, services/, styles/, assets/, types/, tests/. Completada reorganización de apps/root con nueva estructura atómica, componentes movidos y build exitoso.
+2025-11-10 | Completada refactorización a diseño atómico. Proyecto reestructurado con carpetas components/ (atoms, molecules, organisms), hooks/, context/, lib/, services/, styles/, assets/, types/, tests/. Componentes extraídos y reutilizables. Build y dev server funcionando correctamente. Cambios commited y pushed al repo.
