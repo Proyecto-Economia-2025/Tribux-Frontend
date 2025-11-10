@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { AlertCircle, Loader2, UserPlus, Eye, EyeOff } from 'lucide-react'
-import { Button, Input, Label } from '@tribux/ui'
-import { AuthLayout } from '@tribux/ui'
+import { Button, AuthLayout, Alert } from '@tribux/ui'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -58,10 +57,10 @@ export default function LoginPage() {
       {/* Login Form */}
       <form onSubmit={handleLogin} className="space-y-6">
         <div className="space-y-4">
-          <Label htmlFor="email" className="text-base font-semibold">
+          <label htmlFor="email" className="text-base font-semibold">
             Correo Electrónico
-          </Label>
-          <Input
+          </label>
+          <input
             id="email"
             type="email"
             value={email}
@@ -70,18 +69,16 @@ export default function LoginPage() {
             disabled={loading}
             autoComplete="email"
             required
-            aria-required="true"
-            aria-invalid={!!error && !email}
-            className="text-base h-12"
+            className="w-full px-3 py-2 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-12"
           />
         </div>
 
         <div className="space-y-4">
-          <Label htmlFor="password" className="text-base font-semibold">
+          <label htmlFor="password" className="text-base font-semibold">
             Contraseña
-          </Label>
+          </label>
           <div className="relative">
-            <Input
+            <input
               id="password"
               type={showPassword ? 'text' : 'password'}
               value={password}
@@ -90,9 +87,7 @@ export default function LoginPage() {
               disabled={loading}
               autoComplete="current-password"
               required
-              aria-required="true"
-              aria-invalid={!!error && !password}
-              className="text-base h-12 pr-10"
+              className="w-full px-3 py-2 pr-10 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-12"
             />
             <button
               type="button"

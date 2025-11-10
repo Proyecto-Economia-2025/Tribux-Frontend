@@ -1,4 +1,11 @@
 {
   "extends": "ts-config/tsconfig.base",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@tribux/ui": ["../../packages/ui/src/index.ts"]
+    }
+  },
   "include": ["**/*.ts", "**/*.tsx", "global.d.ts"]
 }
