@@ -1,5 +1,5 @@
 import { registerApplication, start } from 'single-spa';
-import './globals.css';
+import './styles/globals.css';
 
 // The header and footer are defined within the root.
 registerApplication(
