@@ -17,7 +17,7 @@ registerApplication(
 // The content application is defined in the content microfrontend.
 registerApplication(
   'content',
-  () => import('content/landing'),
+  () => import('content/App'),
   () => true,
 );
 

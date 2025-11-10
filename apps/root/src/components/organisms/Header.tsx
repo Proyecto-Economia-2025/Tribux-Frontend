@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigateToUrl } from 'single-spa';
 import { Logo } from '../atoms/Logo';
 import { Button } from '../atoms/Button';
 import { NavLink } from '../molecules/NavLink';
@@ -10,6 +11,14 @@ export interface HeaderProps {
 }
 
 export function Header({ className }: HeaderProps): React.JSX.Element {
+  const handleLogin = () => {
+    navigateToUrl('/auth/login');
+  };
+
+  const handleRegister = () => {
+    navigateToUrl('/auth/create-user');
+  };
+
   return (
     <header className={cn('sticky top-0 z-50 w-full border-b border-b-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60', className)}>
       <div className="container flex h-16 items-center justify-between">
@@ -21,8 +30,8 @@ export function Header({ className }: HeaderProps): React.JSX.Element {
           <NavLink href="#about">Acerca de</NavLink>
         </nav>
         <div className="hidden sm:flex gap-4">
-          <Button variant="outline">Iniciar Sesión</Button>
-          <Button variant="primary">Registrarse</Button>
+          <Button variant="outline" onClick={handleLogin}>Iniciar Sesión</Button>
+          <Button variant="primary" onClick={handleRegister}>Registrarse</Button>
         </div>
         <MobileMenuButton />
       </div>

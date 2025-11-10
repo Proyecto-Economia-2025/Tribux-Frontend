@@ -1,3 +1,6 @@
+import React from 'react';
+import { navigateToUrl } from 'single-spa';
+
 export function MobileMenu({
   open,
   onClose,
@@ -5,6 +8,16 @@ export function MobileMenu({
   open: boolean;
   onClose: () => void;
 }): React.JSX.Element {
+  const handleLogin = () => {
+    onClose();
+    navigateToUrl('/auth/login');
+  };
+
+  const handleRegister = () => {
+    onClose();
+    navigateToUrl('/auth/create-user');
+  };
+
   return (
     <div
       className={`fixed top-0 inset-0 z-50 bg-background/80 backdrop-blur-sm md:hidden${open ? '' : ' hidden'}`}
@@ -78,14 +91,14 @@ export function MobileMenu({
           <div className="mt-4 flex flex-col gap-2">
             <button
               className="inline-flex h-10 w-full items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-muted"
-              onClick={onClose}
+              onClick={handleLogin}
               type="button"
             >
               Iniciar Sesión
             </button>
             <button
               className="inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
-              onClick={onClose}
+              onClick={handleRegister}
               type="button"
             >
               Registrarse
