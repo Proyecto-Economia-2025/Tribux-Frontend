@@ -1,4 +1,4 @@
-Always start sessions by reading Session_starter.md, then README.md, then project files; update logs with Date | Summary using 2025-11-06.
+Always start sessions by reading Session_starter.md, then README.md, then project files; update logs with Date | Summary using 2025-11-10.
 
 Follow existing coding standards, architectural decisions, and design patterns; maintain consistent style; reference project Tribux-Frontend and type nodejs.
 
@@ -16,6 +16,6 @@ Reference previous session context, architectural decisions, and solved problems
 
 Optimize prompts: be specific, define output format, split tasks, provide sample inputs/outputs, and allow Copilot to repeat tasks.
 
-Maintain professional, concise communication; link docs when needed; leverage memory, MCP servers, workspace intelligence, and variables Tribux-Frontend, nodejs, 2025-11-06. 
+Maintain professional, concise communication; link docs when needed; leverage memory, MCP servers, workspace intelligence, and variables Tribux-Frontend, nodejs, 2025-11-10. 
 
 Nuncas hagas archivos md, solo si el usuario se lo dice especificamente
