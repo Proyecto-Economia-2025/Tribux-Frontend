@@ -77,6 +77,44 @@ export function Icon({ name, size = 24, className, ...props }: IconProps): React
         <path d="M3 12h18" />
       </>
     ),
+    chart: (
+      <>
+        <rect x="3" y="12" width="4" height="8" rx="1" />
+        <rect x="9" y="8" width="4" height="12" rx="1" />
+        <rect x="15" y="4" width="4" height="16" rx="1" />
+      </>
+    ),
+    lock: (
+      <>
+        <rect x="3" y="11" width="18" height="11" rx="2" />
+        <path d="M7 11V8a5 5 0 0 1 10 0v3" />
+      </>
+    ),
+    bolt: (
+      <>
+        <path d="M13 2 3 14h7l-1 8 10-12h-7z" />
+      </>
+    ),
+    mobile: (
+      <>
+        <rect x="6" y="2" width="12" height="20" rx="2" />
+        <circle cx="12" cy="17" r="1" />
+      </>
+    ),
+    chartUp: (
+      <>
+        <polyline points="3 17 9 11 13 15 21 7" />
+        <polyline points="21 7 21 11 17 11" />
+      </>
+    ),
+    handshake: (
+      <>
+        <path d="M21 12c0-2-3-4-4-4s-3 1-5 1-3-1-5-1S3 10 3 12" />
+        <path d="M7 12v4" />
+        <path d="M14 12v4" />
+        <path d="M10 16h4" />
+      </>
+    ),
   };
 
   return (

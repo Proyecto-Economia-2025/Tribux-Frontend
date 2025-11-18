@@ -12,11 +12,8 @@ function HeroSection(): React.JSX.Element {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Content */}
           <div className="flex flex-col justify-center space-y-8">
-            <div className="space-y-6">
-              <div className="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary border border-primary/20">
-                <Icon name="rocket" size={16} className="mr-2" />
-                Proyecto Académico UCR
-              </div>
+            <div className="space-y-2">
+              
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                 Simplifica tus
@@ -25,7 +22,7 @@ function HeroSection(): React.JSX.Element {
               </h1>
 
               <p className="max-w-[500px] text-lg text-muted-foreground leading-relaxed">
-                Gestiona facturas, concilia declaraciones y cumple con TRIBU-CR de forma segura y eficiente.
+                Gestiona facturas y cumple con TRIBU-CR de forma segura y eficiente.
               </p>
             </div>
 
@@ -53,7 +50,7 @@ function HeroSection(): React.JSX.Element {
                   <div className="w-8 h-8 rounded-full bg-blue-500/20 border-2 border-white"></div>
                   <div className="w-8 h-8 rounded-full bg-teal-500/20 border-2 border-white"></div>
                 </div>
-                <span className="text-sm text-muted-foreground">+500 usuarios activos</span>
+                <span className="text-sm text-muted-foreground">+1 usuarios activos</span>
               </div>
             </div>
           </div>

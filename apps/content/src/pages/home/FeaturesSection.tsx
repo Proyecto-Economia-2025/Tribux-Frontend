@@ -1,35 +1,36 @@
 import React from 'react';
 import { MagicCard } from '@/components/ui/magic-card';
+import { Icon } from '@tribux/ui';
 
 function FeaturesSection(): React.JSX.Element {
   const features = [
     {
-      icon: "📊",
+      icon: 'chart',
       title: "Análisis Inteligente",
       description: "Herramientas avanzadas de análisis para optimizar tu gestión tributaria y tomar mejores decisiones."
     },
     {
-      icon: "🔒",
+      icon: 'lock',
       title: "Seguridad Garantizada",
       description: "Protección de datos de nivel empresarial con encriptación avanzada y cumplimiento normativo."
     },
     {
-      icon: "⚡",
+      icon: 'bolt',
       title: "Automatización",
       description: "Automatiza procesos repetitivos y reduce errores humanos en la gestión de tus obligaciones fiscales."
     },
     {
-      icon: "📱",
+      icon: 'mobile',
       title: "Acceso Móvil",
       description: "Gestiona tus tributos desde cualquier dispositivo con nuestra aplicación web responsive."
     },
     {
-      icon: "📈",
+      icon: 'chartUp',
       title: "Reportes Detallados",
       description: "Obtén insights valiosos con reportes personalizados y análisis de tendencias fiscales."
     },
     {
-      icon: "🤝",
+      icon: 'handshake',
       title: "Soporte Especializado",
       description: "Equipo de expertos tributarios disponible para asistirte en todo momento."
     }
@@ -58,7 +59,7 @@ function FeaturesSection(): React.JSX.Element {
               <div className="p-6 h-full">
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                    {feature.icon}
+                    <Icon name={feature.icon} size={44} className="mx-auto" />
                   </div>
 
                   <h3 className="text-xl font-semibold text-slate-900">
