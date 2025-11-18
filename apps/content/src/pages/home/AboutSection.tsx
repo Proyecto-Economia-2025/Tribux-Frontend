@@ -7,13 +7,13 @@ function AboutSection(): React.JSX.Element {
     {
       name: "Antony Monge",
       role: "CEO y Fundador",
-      description: "Estudiante de Economía Computacional con experiencia en desarrollo de soluciones digitales para transformación tributaria.",
+      description: "Economista con experiencia en modelado y políticas públicas; lidera el diseño de productos para simplificar el cumplimiento con TRIBU‑CR.",
       image: "ceo-portrait.jpg"
     },
     {
       name: "Cristopher Zúñiga",
       role: "CTO y Co-Fundador",
-      description: "Especialista en desarrollo de software y sistemas de gestión tributaria digital.",
+      description: "Ingeniero de software con experiencia en integraciones B2B y facturación electrónica (Tico Factura); responsable de la arquitectura técnica y seguridad.",
       image: "cto-portrait.jpg"
     }
   ];
@@ -21,18 +21,24 @@ function AboutSection(): React.JSX.Element {
   const values = [
     {
       title: "Innovación Tecnológica",
-      description: "Aplicamos principios de economía computacional y tecnologías modernas para resolver problemas tributarios complejos.",
+      description: "Aplicamos economía computacional y APIs modernas (Tico Factura) para automatizar conciliaciones y reducir errores en las declaraciones.",
       icon: "lightbulb"
     },
     {
       title: "Accesibilidad",
-      description: "Facilitamos la inclusión digital de las mipymes en el nuevo sistema tributario, reduciendo barreras técnicas.",
+      description: "Diseñamos flujos intuitivos de onboarding y soporte técnico para que comercios sin experiencia técnica puedan cumplir con TRIBU‑CR.",
       icon: "globe"
     },
     {
       title: "Precisión y Confiabilidad",
-      description: "Nos comprometemos con la exactitud en el análisis de datos y la robustez de nuestras soluciones.",
+      description: "Garantizamos conciliaciones confiables y trazabilidad de las operaciones; auditorías y métricas para validar la reducción de errores.",
       icon: "target"
+    }
+    ,
+    {
+      title: "Acompañamiento Humano",
+      description: "Ofrecemos soporte y servicios de onboarding asistido (TB) para reducir fricción en adopción y asegurar que las empresas usen TRIBU‑CR correctamente.",
+      icon: "handshake"
     }
   ];
 
