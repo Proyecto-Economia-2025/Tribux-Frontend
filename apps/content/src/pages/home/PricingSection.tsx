@@ -131,6 +131,7 @@ function PricingSection(): React.JSX.Element {
                         ? 'bg-primary text-primary-foreground hover:bg-primary/90'
                         : 'border-2 border-primary/20 bg-transparent text-primary hover:bg-primary hover:text-primary-foreground'
                     }`}
+                    variant={plan.popular ? 'default' : 'ghost'}
                     onClick={() => navigate('/create-user')}
                   >
                     {plan.buttonText}

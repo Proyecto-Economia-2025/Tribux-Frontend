@@ -6,6 +6,7 @@ export interface ShimmerButtonProps extends ComponentPropsWithoutRef<"button"> {
   shimmerColor?: string
   className?: string
   children?: React.ReactNode
+  variant?: 'default' | 'ghost'
 }
 
 export const ShimmerButton = React.forwardRef<
@@ -17,6 +18,7 @@ export const ShimmerButton = React.forwardRef<
       shimmerColor = "#ffffff",
       className,
       children,
+      variant = 'default',
       ...props
     },
     ref
@@ -24,7 +26,10 @@ export const ShimmerButton = React.forwardRef<
     return (
       <button
         className={cn(
-          "group relative overflow-hidden rounded-lg border border-white/20 bg-gradient-to-r from-primary to-primary/80 px-6 py-3 text-white shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-primary/25 active:scale-[0.98]",
+          'group relative overflow-hidden rounded-lg px-6 py-3 transition-all duration-300 ease-in-out active:scale-[0.98]',
+          variant === 'default'
+            ? 'border border-white/20 bg-gradient-to-r from-primary to-primary/80 text-white shadow-lg hover:shadow-xl hover:shadow-primary/25'
+            : 'border border-primary/20 bg-transparent text-primary shadow-sm hover:bg-primary hover:text-primary-foreground',
           className
         )}
         ref={ref}
@@ -35,10 +40,12 @@ export const ShimmerButton = React.forwardRef<
         </div>
 
         {/* Simple shimmer effect */}
-        <div
-          className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full"
-          style={{ backgroundColor: shimmerColor }}
-        />
+        {variant === 'default' && (
+          <div
+            className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full"
+            style={{ backgroundColor: shimmerColor }}
+          />
+        )}
       </button>
     )
   }
