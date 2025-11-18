@@ -6,6 +6,15 @@ export interface HeaderProps {
 }
 
 export function Header({ className }: HeaderProps): React.JSX.Element {
+  const scrollToSection = (sectionId: string) => {
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <header style={{
       position: 'sticky',
@@ -52,30 +61,88 @@ export function Header({ className }: HeaderProps): React.JSX.Element {
           }}>ribux</span>
         </div>
 
-        {/* Navigation Links - Hidden on mobile */}
+        {/* Navigation Links */}
         <nav style={{
-          display: 'none',
-          gap: '24px',
-        }} className="md:flex">
-          <a href="#features" style={{ color: '#0f172a', textDecoration: 'none' }}>
+          display: 'flex',
+          gap: '32px',
+          flex: 1,
+          justifyContent: 'center',
+        }}>
+          <button
+            onClick={() => scrollToSection('features')}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#0f172a',
+              cursor: 'pointer',
+              fontSize: '14px',
+              fontWeight: '500',
+              padding: '8px 0',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#0f766e')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#0f172a')}
+          >
             Características
-          </a>
-          <a href="#testimonials" style={{ color: '#0f172a', textDecoration: 'none' }}>
+          </button>
+          <button
+            onClick={() => scrollToSection('testimonials')}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#0f172a',
+              cursor: 'pointer',
+              fontSize: '14px',
+              fontWeight: '500',
+              padding: '8px 0',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#0f766e')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#0f172a')}
+          >
             Testimonios
-          </a>
-          <a href="#pricing" style={{ color: '#0f172a', textDecoration: 'none' }}>
+          </button>
+          <button
+            onClick={() => scrollToSection('pricing')}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#0f172a',
+              cursor: 'pointer',
+              fontSize: '14px',
+              fontWeight: '500',
+              padding: '8px 0',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#0f766e')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#0f172a')}
+          >
             Precios
-          </a>
-          <a href="#about" style={{ color: '#0f172a', textDecoration: 'none' }}>
-            Acerca de
-          </a>
+          </button>
+          <button
+            onClick={() => scrollToSection('about')}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#0f172a',
+              cursor: 'pointer',
+              fontSize: '14px',
+              fontWeight: '500',
+              padding: '8px 0',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#0f766e')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#0f172a')}
+          >
+            Sobre Nosotros
+          </button>
         </nav>
 
-        {/* Buttons - Hidden on mobile */}
+        {/* Auth Buttons */}
         <div style={{
-          display: 'none',
-          gap: '16px',
-        }} className="md:flex">
+          display: 'flex',
+          gap: '12px',
+        }}>
           <button
             onClick={() => navigateToUrl('/auth/login')}
             style={{
@@ -86,9 +153,13 @@ export function Header({ className }: HeaderProps): React.JSX.Element {
               cursor: 'pointer',
               fontSize: '14px',
               fontWeight: '500',
+              color: '#0f172a',
+              transition: 'background 0.2s',
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#f1f5f9')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = 'white')}
           >
-            Iniciar Sesión
+            Entrar
           </button>
           <button
             onClick={() => navigateToUrl('/auth/create-user')}
@@ -101,7 +172,10 @@ export function Header({ className }: HeaderProps): React.JSX.Element {
               cursor: 'pointer',
               fontSize: '14px',
               fontWeight: '500',
+              transition: 'background 0.2s',
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#0d5e57')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#0f766e')}
           >
             Registrarse
           </button>
