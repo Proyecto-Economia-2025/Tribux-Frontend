@@ -36,4 +36,3 @@ export function Header({ className }: HeaderProps): React.JSX.Element {
     </header>
   );
 }
-}
