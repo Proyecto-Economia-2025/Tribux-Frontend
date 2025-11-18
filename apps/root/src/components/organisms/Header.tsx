@@ -18,10 +18,14 @@ export function Header({ className }: HeaderProps): React.JSX.Element {
     navigateToUrl('/auth/create-user');
   };
 
+  const handleLogoClick = () => {
+    navigateToUrl('/');
+  };
+
   return (
     <header className={cn('sticky top-0 z-50 w-full border-b border-b-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60', className)}>
       <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
-        <Logo />
+        <Logo onClick={handleLogoClick} style={{ cursor: 'pointer' }} />
         <nav className="hidden md:flex gap-6">
           <NavLink href="#features">Características</NavLink>
           <NavLink href="#testimonials">Testimonios</NavLink>

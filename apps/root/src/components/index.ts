@@ -11,8 +11,6 @@ export { SocialIcon } from './molecules/SocialIcon';
 // Organisms
 export { Header } from './organisms/Header';
 export { Footer } from './organisms/Footer';
-export { MobileMenu } from './organisms/MobileMenu';
-export { MobileMenuButton } from './organisms/MobileMenuButton';
 
 // Templates
 // TODO: Add templates
