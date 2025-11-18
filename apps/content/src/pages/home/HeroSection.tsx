@@ -30,11 +30,16 @@ function HeroSection(): React.JSX.Element {
               <ShimmerButton
                 className="h-12 px-8 text-base font-semibold bg-primary text-white hover:bg-primary/90"
                 onClick={() => {
+                  // Pre-fill a friendly, personalized WhatsApp message using short prompts
                   const phone = '50685456150'; // Costa Rica +506
-                  const text = encodeURIComponent(
-                    'Hola, quiero más información sobre TribuFácil y la integración con TRIBU-CR. Mi número: 85456150'
-                  );
-                  const url = `https://wa.me/${phone}?text=${text}`;
+                  const name = window.prompt('Tu nombre (opcional)');
+                  const business = window.prompt('Nombre de tu negocio (opcional)');
+                  const place = window.prompt('Ciudad o cantón (opcional)', 'Guápiles');
+                  const contactNumber = window.prompt('Tu número de teléfono (opcional)');
+
+                  const message = `Hola, soy ${name || '[Tu nombre]'}${business ? ', propietario de ' + business : ''} desde ${place || 'Guápiles'}. Estoy interesado en una demo de TribuFácil para integrar Tico Factura y facilitar la adopción de TRIBU-CR. Mi teléfono de contacto: ${contactNumber || ''}. ¿Pueden comunicarse conmigo para apoyo y onboarding? Muchas gracias.`;
+
+                  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
                   window.open(url, '_blank');
                 }}
               >
