@@ -60,10 +60,10 @@ function AboutSection(): React.JSX.Element {
               <div className="p-8">
                 <h3 className="text-3xl font-bold mb-4">Nuestra Historia</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Este proyecto nace como parte del curso de Economía de la Computación en la Universidad de Costa Rica, Sede del Atlántico, Recinto de Guápiles. Desarrollado por estudiantes de economía con el objetivo de aplicar principios de economía computacional para resolver problemas reales en el contexto de la transformación tributaria digital de Costa Rica.
+                  Este proyecto nace como respuesta directa a la implementación del sistema TRIBU‑CR y a las demandas que dejó la transición digital de la administración fiscal costarricense. Iniciado en la Universidad de Costa Rica, Sede del Atlántico (Guápiles), el equipo —formado por estudiantes y docentes de economía y ciencias de la computación— desarrolló prototipos y herramientas que facilitan la adopción de TRIBU‑CR por parte de mipymes.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  El proyecto aborda la transición al Sistema Integrado de Gestión Tributaria TRIBU-CR, implementado por el Ministerio de Hacienda, que representa un cambio significativo en la administración fiscal costarricense. Nuestro enfoque es crear una solución tecnológica que facilite la adaptación de las micro, pequeñas y medianas empresas a este nuevo entorno digital.
+                  El proyecto aborda de forma práctica la adopción del TRIBU‑CR, creado por el Ministerio de Hacienda, que introduce módulos como Tico Factura y nuevos flujos de fiscalización. Nuestra misión es construir una interfaz intermediaria y servicios de acompañamiento que reduzcan los costos de transacción, minimicen errores en las declaraciones y permitan a las mipymes cumplir de forma segura y eficiente con las nuevas exigencias digitales.
                 </p>
               </div>
             </MagicCard>
@@ -76,7 +76,7 @@ function AboutSection(): React.JSX.Element {
               <div className="p-8">
                 <h3 className="text-3xl font-bold mb-4">Nuestra Misión</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Desarrollar un servicio digital que aplique principios de economía computacional para evaluar la factibilidad de apoyar a las mipymes costarricenses en su adaptación al sistema TRIBU-CR. Buscamos optimizar costos de transacción, reducir asimetrías informativas y mejorar la eficiencia operativa mediante análisis de datos, modelado económico y desarrollo de prototipos funcionales.
+                  Desarrollar un servicio digital que, desde la economía computacional, ofrezca herramientas prácticas para el onboard y la integración con Tico Factura, conciliación contable‑tributaria y dashboards operativos. Nuestro objetivo: disminuir fricciones operativas, facilitar la adaptación técnica de comercios pequeños y crear métricas que demuestren mejoras en tiempo y en reducción de errores en las declaraciones ante TRIBU‑CR.
                 </p>
               </div>
             </MagicCard>
