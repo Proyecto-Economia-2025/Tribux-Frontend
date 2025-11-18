@@ -20,15 +20,15 @@ export function Header({ className }: HeaderProps): React.JSX.Element {
 
   return (
     <header className={cn('sticky top-0 z-50 w-full border-b border-b-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60', className)}>
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
         <Logo />
-        <nav className="hidden sm:flex gap-6">
+        <nav className="hidden md:flex gap-6">
           <NavLink href="#features">Características</NavLink>
           <NavLink href="#testimonials">Testimonios</NavLink>
           <NavLink href="#pricing">Precios</NavLink>
           <NavLink href="#about">Acerca de</NavLink>
         </nav>
-        <div className="flex gap-4">
+        <div className="hidden md:flex gap-4">
           <Button variant="outline" onClick={handleLogin}>Iniciar Sesión</Button>
           <Button variant="primary" onClick={handleRegister}>Registrarse</Button>
         </div>
