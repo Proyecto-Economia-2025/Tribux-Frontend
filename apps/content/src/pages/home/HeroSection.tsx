@@ -29,7 +29,14 @@ function HeroSection(): React.JSX.Element {
             <div className="flex flex-col gap-4 min-[400px]:flex-row">
               <ShimmerButton
                 className="h-12 px-8 text-base font-semibold bg-primary text-white hover:bg-primary/90"
-                onClick={() => navigate('/create-user')}
+                onClick={() => {
+                  const phone = '50685456150'; // Costa Rica +506
+                  const text = encodeURIComponent(
+                    'Hola, quiero más información sobre TribuFácil y la integración con TRIBU-CR. Mi número: 85456150'
+                  );
+                  const url = `https://wa.me/${phone}?text=${text}`;
+                  window.open(url, '_blank');
+                }}
               >
                 Comenzar Ahora
               </ShimmerButton>
