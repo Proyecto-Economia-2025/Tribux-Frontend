@@ -9,13 +9,17 @@
     "start": "vite preview --port 3026"
   },
   "dependencies": {
+    "@magic-works/commonjs-import.meta": "^1.0.1",
     "@tribux/ui": "workspace:*",
     "@vercel/microfrontends": "1.2.4",
+    "clsx": "^2.0.0",
+    "framer-motion": "^12.23.24",
     "lucide-react": "^0.553.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.9.5",
-    "single-spa-react": "^6.0.2"
+    "single-spa-react": "^6.0.2",
+    "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
     "@module-federation/vite": "^1.2.7",

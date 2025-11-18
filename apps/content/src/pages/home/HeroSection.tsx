@@ -1,64 +1,97 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
 
 function HeroSection(): React.JSX.Element {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 md:py-28">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                Servicio Digital Tributario con Tribux
+    <section className="relative py-20 md:py-32 min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <div className="container px-4 md:px-6 relative z-10">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          {/* Content */}
+          <div className="flex flex-col justify-center space-y-8">
+            <div className="space-y-6">
+              <div className="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary border border-primary/20">
+                🚀 Proyecto Académico UCR
+              </div>
+
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                Simplifica tus
+                <span className="block text-primary">Obligaciones</span>
+                <span className="block">Tributarias</span>
               </h1>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                Simplifica la transición al sistema TRIBU-CR con nuestra plataforma de asistencia tributaria.
-                Gestiona facturas, concilia declaraciones y cumple con tus obligaciones fiscales de forma segura.
+
+              <p className="max-w-[500px] text-lg text-muted-foreground leading-relaxed">
+                Gestiona facturas, concilia declaraciones y cumple con TRIBU-CR de forma segura y eficiente.
               </p>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <button
-                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 gap-1"
-                type="button"
-                onClick={() => navigate('/auth/login')}
+
+            <div className="flex flex-col gap-4 min-[400px]:flex-row">
+              <ShimmerButton
+                className="h-12 px-8 text-base font-semibold bg-primary text-white hover:bg-primary/90"
+                onClick={() => navigate('/create-user')}
               >
-                Iniciar Sesión
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </button>
+                Comenzar Ahora
+              </ShimmerButton>
+
               <button
-                className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-muted"
-                type="button"
-                onClick={() => navigate('/auth/create-user')}
+                className="h-12 px-8 text-base font-semibold border-2 border-primary/20 bg-white text-primary hover:bg-primary/5 hover:border-primary/40 transition-colors"
+                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Registrarse
+                Ver Características
               </button>
             </div>
+
+            {/* Trust indicators */}
+            <div className="flex items-center gap-8 pt-8">
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 rounded-full bg-primary/20 border-2 border-white"></div>
+                  <div className="w-8 h-8 rounded-full bg-blue-500/20 border-2 border-white"></div>
+                  <div className="w-8 h-8 rounded-full bg-teal-500/20 border-2 border-white"></div>
+                </div>
+                <span className="text-sm text-muted-foreground">+500 usuarios activos</span>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center justify-center">
-            <img
-              alt="Dashboard de Análisis Económico Tribux"
-              className="rounded-xl object-cover shadow-2xl hover:shadow-3xl transition-all duration-300 border border-gray-200/20"
-              height="550"
-              src="product-dashboard-overview.png"
-              width="550"
-              loading="eager"
-            />
+
+          {/* Visual */}
+          <div className="relative">
+            <div className="relative mx-auto max-w-lg">
+              {/* Main card */}
+              <div className="relative rounded-2xl bg-white p-8 shadow-2xl border border-slate-200">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+                        <span className="text-white font-bold text-lg">T</span>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-slate-900">Tribux</h3>
+                        <p className="text-sm text-slate-500">Gestión Tributaria</p>
+                      </div>
+                    </div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="h-4 bg-slate-100 rounded animate-pulse"></div>
+                    <div className="h-4 bg-slate-100 rounded w-3/4 animate-pulse"></div>
+                    <div className="h-4 bg-primary/20 rounded w-1/2 animate-pulse"></div>
+                  </div>
+
+                  <div className="flex gap-2 pt-4">
+                    <div className="h-8 bg-primary rounded-lg flex-1 animate-pulse"></div>
+                    <div className="h-8 bg-slate-100 rounded-lg flex-1 animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/10 rounded-full blur-xl"></div>
+            </div>
           </div>
         </div>
       </div>

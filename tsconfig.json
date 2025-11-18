@@ -8,12 +8,6 @@
       "path": "./apps/root"
     },
     {
-      "path": "./packages/eslint-config-custom"
-    },
-    {
-      "path": "./packages/ts-config"
-    },
-    {
       "path": "./packages/ui"
     }
   ]

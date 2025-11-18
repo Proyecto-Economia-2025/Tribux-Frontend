@@ -1,34 +1,43 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
 
 function CTASection(): React.JSX.Element {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 bg-primary">
       <div className="container px-4 md:px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            ¿Listo para comenzar?
-          </h2>
-          <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground md:text-xl">
-            Únete a miles de usuarios que ya confían en Tribux para sus necesidades tributarias.
-          </p>
-          <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:justify-center">
-            <button
-              className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
-              type="button"
-              onClick={() => navigate('/auth/login')}
+        <div className="flex flex-col items-center justify-center space-y-8 text-center">
+          <div className="space-y-4">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-white">
+              ¿Listo para Comenzar?
+            </h2>
+            <p className="mx-auto max-w-[600px] text-lg text-primary-foreground/90 leading-relaxed">
+              Únete a cientos de empresas que ya confían en Tribux para su gestión tributaria.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center items-center">
+            <ShimmerButton
+              className="h-12 px-8 text-base font-semibold bg-white text-primary hover:bg-white/90"
+              onClick={() => navigate('/create-user')}
             >
-              Iniciar Sesión
-            </button>
+              Comenzar Prueba Gratuita
+            </ShimmerButton>
+
             <button
-              className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-muted"
-              type="button"
-              onClick={() => navigate('/auth/create-user')}
+              className="h-12 px-8 text-base font-semibold border-2 border-white/30 bg-transparent text-white hover:bg-white/10 hover:border-white/50 transition-colors"
+              onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Registrarse
+              Ver Características
             </button>
+          </div>
+
+          <div className="pt-8 border-t border-white/20">
+            <p className="text-white/80 text-sm">
+              Sin compromiso • Configuración en minutos • Soporte incluido
+            </p>
           </div>
         </div>
       </div>

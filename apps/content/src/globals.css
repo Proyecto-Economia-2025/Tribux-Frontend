@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@theme {
+:root {
   --color-background: white;
   --color-foreground: #0f172a;
   --color-primary: #0f766e;
@@ -10,12 +10,14 @@
   --border: hsl(0% 0% 89.8%);
 }
 
-@utility container {
+.container {
   margin-left: auto;
   margin-right: auto;
   padding: 0 2rem;
+}
 
-  @variants 2xl {
+@media (min-width: 1536px) {
+  .container {
     max-width: 1400px;
   }
 }
