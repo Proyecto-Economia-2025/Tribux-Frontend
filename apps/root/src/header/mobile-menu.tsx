@@ -20,7 +20,7 @@ export function MobileMenu({
 
   return (
     <div
-      className={`fixed top-0 inset-0 z-50 bg-background/80 backdrop-blur-sm md:hidden${open ? '' : ' hidden'}`}
+      className={`fixed top-0 inset-0 z-50 bg-background/80 backdrop-blur-sm md:hidden ${open ? '' : 'hidden'}`}
       id="mobile-menu"
     >
       <div className="fixed inset-y-0 top-0 right-0 w-full min-h-svh max-w-xs bg-background p-6 shadow-lg">

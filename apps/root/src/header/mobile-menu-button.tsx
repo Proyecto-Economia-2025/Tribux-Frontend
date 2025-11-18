@@ -25,7 +25,7 @@ export function MobileMenuButton(): React.JSX.Element {
           className="inline-flex h-9 items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
           id="mobile-menu-button"
           onClick={() => {
-            setIsOpen(true);
+            setIsOpen(!isOpen);
           }}
           type="button"
         >
