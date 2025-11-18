@@ -9,45 +9,46 @@ function PricingSection(): React.JSX.Element {
   const plans = [
     {
       name: "Básico",
-      price: "$29",
+      price: "₡5,900",
       period: "/mes",
-      description: "Perfecto para investigadores individuales y pequeños equipos.",
+      description: "Ideal para comercios pequeños y microempresas que requieren soporte esencial.",
       features: [
-        "Hasta 5 miembros del equipo",
-        "20GB almacenamiento",
-        "Análisis básico",
-        "Soporte por email"
+        "Onboarding guiado (30 min)",
+        "Integración con Tico Factura (básica)",
+        "Hasta 200 facturas / mes",
+        "Conciliación automática básica",
+        "1 usuario",
+        "Soporte por email (48‑72h)"
       ],
       buttonText: "Comenzar Prueba Gratuita",
       popular: false
     },
     {
       name: "Profesional",
-      price: "$79",
+      price: "₡14,900",
       period: "/mes",
-      description: "Ideal para empresas y equipos en crecimiento.",
+      description: "Para pymes que necesitan conciliación avanzada y reportes personalizados.",
       features: [
-        "Hasta 20 miembros del equipo",
-        "100GB almacenamiento",
-        "Análisis avanzado",
-        "Soporte prioritario",
-        "Integraciones personalizadas"
+        "Todo lo de Básico",
+        "Hasta 1,000 facturas / mes",
+        "3 usuarios",
+        "Integraciones POS y contables",
+        "Soporte prioritario (24h) y 1 sesión analítica mensual"
       ],
       buttonText: "Comenzar Prueba Gratuita",
       popular: true
     },
     {
       name: "Empresarial",
-      price: "$199",
+      price: "₡39,900",
       period: "/mes",
-      description: "Para grandes organizaciones con necesidades avanzadas.",
+      description: "Solución completa para empresas y despachos con integración y SLA.",
       features: [
-        "Miembros del equipo ilimitados",
-        "1TB almacenamiento",
-        "Análisis empresarial",
-        "Soporte dedicado 24/7",
-        "Desarrollo personalizado",
-        "Garantías SLA"
+        "Facturación ilimitada",
+        "Usuarios y sucursales ilimitadas",
+        "API e integraciones a medida",
+        "Soporte dedicado 24/7 y SLA",
+        "Panel multi‑cliente y white‑label disponible"
       ],
       buttonText: "Contactar Ventas",
       popular: false
