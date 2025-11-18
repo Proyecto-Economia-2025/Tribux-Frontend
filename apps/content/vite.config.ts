@@ -30,6 +30,9 @@ export default defineConfig({
         'react-dom/': {
           singleton: true,
         },
+        'single-spa': {
+          singleton: true,
+        },
       },
     }) as Plugin[],
   ],
