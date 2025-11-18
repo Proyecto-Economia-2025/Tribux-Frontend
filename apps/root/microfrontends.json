@@ -9,7 +9,7 @@
     "single-spa-content-microfrontend": {
       "routing": [
         {
-          "paths": ["/_content/:path*"]
+          "paths": ["/_content/:path*", "/auth/*", "/invoices/*", "/dashboard", "/menu"]
         }
       ]
     }

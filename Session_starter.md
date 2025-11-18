@@ -33,3 +33,5 @@ Optimize prompts: be specific, define output format, split tasks, provide sample
 2025-11-18 | Proyecto reiniciado. Servidores de desarrollo corriendo en localhost:3024 y localhost:3026.
 2025-11-18 | Implementado login con datos quemados y menú principal. Creadas páginas placeholder y servicios TypeScript para facturas y clientes.
 2025-11-18 | Integrado dashboard en menú con sidebar, métricas mockeadas y gráfico de barras usando Chart.js.
+2025-11-18 | Integrado header y footer en dashboard, sidebar expansible con animaciones suaves.
+2025-11-18 | Rediseñado dashboard con sidebar hover-expand, gradientes, métricas mejoradas y contenido dinámico.
