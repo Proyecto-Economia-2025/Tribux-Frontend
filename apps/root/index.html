@@ -7,10 +7,27 @@
     <link rel="icon" type="image/webp" href="/logo.webp" />
     <link rel="stylesheet" href="./src/globals.css" />
     <script type="module" src="./src/index.ts"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      #app {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      #single-spa-application\:content {
+        flex: 1;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <div id="single-spa-application:header"></div>
-    <div id="single-spa-application:content"></div>
-    <div id="single-spa-application:footer"></div>
+    <div id="app">
+      <div id="single-spa-application:header"></div>
+      <div id="single-spa-application:content"></div>
+      <div id="single-spa-application:footer"></div>
+    </div>
   </body>
 </html>
