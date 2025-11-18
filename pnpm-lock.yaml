@@ -75,6 +75,9 @@ importers:
       react-router-dom:
         specifier: ^7.9.5
         version: 7.9.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      single-spa:
+        specifier: ^6.0.3
+        version: 6.0.3
       single-spa-react:
         specifier: ^6.0.2
         version: 6.0.2(@types/react-dom@19.1.5(@types/react@19.1.4))(@types/react@19.1.4)(react@19.1.0)
