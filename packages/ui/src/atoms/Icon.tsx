@@ -115,6 +115,25 @@ export function Icon({ name, size = 24, className, ...props }: IconProps): React
         <path d="M10 16h4" />
       </>
     ),
+    teacher: (
+      <>
+        <path d="M12 2 1 7l11 5 11-5-11-5z" />
+        <path d="M4.5 9.5v4a7.5 7.5 0 0 0 15 0v-4" />
+        <path d="M9 21v-3a3 3 0 0 1 6 0v3" />
+      </>
+    ),
+    briefcase: (
+      <>
+        <rect x="2" y="7" width="20" height="13" rx="2" />
+        <path d="M16 3h-8v4h8V3z" />
+      </>
+    ),
+    laptop: (
+      <>
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M2 20h20" />
+      </>
+    ),
   };
 
   return (
