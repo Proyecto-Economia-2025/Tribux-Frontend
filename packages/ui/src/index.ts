@@ -15,7 +15,6 @@ export { Alert } from './molecules/Alert';
 // Organisms
 export { Header } from './organisms/Header';
 export { Footer } from './organisms/Footer';
-export { MobileMenu } from './organisms/MobileMenu';
 export { NotificationProvider, NotificationCenter } from './organisms/NotificationCenter';
 
 // Utils
