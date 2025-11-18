@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { AlertCircle, Loader2, UserPlus, Eye, EyeOff } from 'lucide-react'
 import { Button, AuthLayout, Alert } from '@tribux/ui'
+import { useNavigate } from 'react-router-dom'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -8,6 +9,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const navigate = useNavigate()
 
   async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -21,14 +23,18 @@ export default function LoginPage() {
     setLoading(true)
 
     try {
-      // TODO: Implementar lógica de autenticación
-      console.log('Login attempt:', { email, password: '***' })
+      // Datos quemados para demo
+      const demoEmail = 'antony.mongelopez@ucr.ac.cr'
+      const demoPassword = 'tony123'
 
-      // Simulación de login exitoso
-      setTimeout(() => {
+      if (email === demoEmail && password === demoPassword) {
         console.log('Login successful')
-        setLoading(false)
-      }, 2000)
+        navigate('/menu')
+      } else {
+        setError('Credenciales incorrectas')
+      }
+
+      setLoading(false)
 
     } catch (err: unknown) {
       console.error('Error en login:', err)
