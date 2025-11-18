@@ -19,7 +19,7 @@ export function Footer({ className }: FooterProps): React.JSX.Element {
           <div className="col-span-1 sm:col-span-2 lg:col-span-2">
             <Logo />
             <p className="mt-4 max-w-xs text-muted-foreground">
-              Potenciando empresas con soluciones innovadoras desde 2010. Tu
+              Potenciando empresas con soluciones innovadoras. Tu
               éxito es nuestra prioridad.
             </p>
             <div className="mt-6 flex gap-4">
