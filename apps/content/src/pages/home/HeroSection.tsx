@@ -2,9 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Icon } from '@tribux/ui';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
+import ContactModal from '@/components/ui/ContactModal';
+import { useState } from 'react';
 
 function HeroSection(): React.JSX.Element {
   const navigate = useNavigate();
+  const [openContact, setOpenContact] = useState(false);
 
   return (
     <section className="relative py-20 md:py-32 min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-white to-slate-100">
@@ -29,22 +32,11 @@ function HeroSection(): React.JSX.Element {
             <div className="flex flex-col gap-4 min-[400px]:flex-row">
               <ShimmerButton
                 className="h-12 px-8 text-base font-semibold bg-primary text-white hover:bg-primary/90"
-                onClick={() => {
-                  // Pre-fill a friendly, personalized WhatsApp message using short prompts
-                  const phone = '50685456150'; // Costa Rica +506
-                  const name = window.prompt('Tu nombre (opcional)');
-                  const business = window.prompt('Nombre de tu negocio (opcional)');
-                  const place = window.prompt('Ciudad o cantón (opcional)', 'Guápiles');
-                  const contactNumber = window.prompt('Tu número de teléfono (opcional)');
-
-                  const message = `Hola, soy ${name || '[Tu nombre]'}${business ? ', propietario de ' + business : ''} desde ${place || 'Guápiles'}. Estoy interesado en una demo de TribuFácil para integrar Tico Factura y facilitar la adopción de TRIBU-CR. Mi teléfono de contacto: ${contactNumber || ''}. ¿Pueden comunicarse conmigo para apoyo y onboarding? Muchas gracias.`;
-
-                  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-                  window.open(url, '_blank');
-                }}
+                onClick={() => setOpenContact(true)}
               >
                 Comenzar Ahora
               </ShimmerButton>
+              <ContactModal open={openContact} onClose={() => setOpenContact(false)} />
 
               <button
                 className="h-12 px-8 text-base font-semibold border-2 border-primary/20 bg-white text-primary hover:bg-primary/5 hover:border-primary/40 transition-colors"
