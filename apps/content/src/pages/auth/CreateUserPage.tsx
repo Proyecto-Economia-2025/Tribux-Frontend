@@ -1,11 +1,11 @@
 import React from 'react';
 import { UserPlus } from 'lucide-react';
 import { AuthLayout } from '@tribux/ui';
+import { navigateToUrl } from 'single-spa';
 
 export default function CreateUserPage() {
   const handleBack = () => {
-    // For now, just log. In a real app, use router navigation
-    console.log('Navigate back to login');
+    navigateToUrl('/auth/login');
   };
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AlertCircle, Loader2, Mail } from 'lucide-react';
 import { AuthLayout, Alert } from '@tribux/ui';
+import { navigateToUrl } from 'single-spa';
 
 export default function PasswordRecoveryRequestPage() {
   const [email, setEmail] = useState('');
@@ -31,7 +32,7 @@ export default function PasswordRecoveryRequestPage() {
 
       // Simulate navigation to verification page
       setTimeout(() => {
-        console.log('Navigate to verification page');
+        navigateToUrl('/auth/login');
       }, 2000);
 
     } catch (err) {
@@ -43,7 +44,7 @@ export default function PasswordRecoveryRequestPage() {
   }
 
   const handleBack = () => {
-    console.log('Navigate back to login');
+    navigateToUrl('/auth/login');
   };
 
   return (

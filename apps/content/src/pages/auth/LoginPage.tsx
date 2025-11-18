@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AlertCircle, Loader2, UserPlus, Eye, EyeOff } from 'lucide-react'
 import { Button, AuthLayout, Alert } from '@tribux/ui'
-import { useNavigate } from 'react-router-dom'
+import { navigateToUrl } from 'single-spa'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -9,7 +9,6 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  const navigate = useNavigate()
 
   async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -29,7 +28,7 @@ export default function LoginPage() {
 
       if (email === demoEmail && password === demoPassword) {
         console.log('Login successful')
-        navigate('/menu')
+        navigateToUrl('/menu')
       } else {
         setError('Credenciales incorrectas')
       }
@@ -128,7 +127,7 @@ export default function LoginPage() {
           <Button
             type="button"
             variant="link"
-            onClick={() => console.log('Navigate to forgot password')}
+            onClick={() => navigateToUrl('/auth/forgot-password')}
             className="text-sm text-muted-foreground hover:text-primary justify-start p-0 h-auto"
             disabled={loading}
           >
@@ -137,7 +136,7 @@ export default function LoginPage() {
           <Button
             type="button"
             variant="link"
-            onClick={() => console.log('Navigate to create user')}
+            onClick={() => navigateToUrl('/auth/create-user')}
             className="text-sm text-muted-foreground hover:text-primary justify-start p-0 h-auto"
             disabled={loading}
           >
