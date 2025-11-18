@@ -16,7 +16,6 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       exposes: {
         './App': './src/index.tsx',
-        './landing': './src/landing.tsx',
       },
       shared: {
         react: {
