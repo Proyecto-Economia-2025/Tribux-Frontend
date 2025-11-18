@@ -66,7 +66,7 @@ export function Header({ className }: HeaderProps): React.JSX.Element {
           </button>
         </div>
       </header>
-      <MobileMenu open={isMenuOpen} onClose={handleMenuClose} />
+      {isMenuOpen && <MobileMenu open={isMenuOpen} onClose={handleMenuClose} />}
     </>
   );
 }
