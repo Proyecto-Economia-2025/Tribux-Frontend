@@ -49,6 +49,34 @@ export function Icon({ name, size = 24, className, ...props }: IconProps): React
         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
       </>
     )
+    ,
+    rocket: (
+      <>
+        <path d="M2 21s4-4 6-4 6 4 6 4 1-4 1-7c0-2-2-5-6-5S6 10 4 12c-2 2-2 9-2 9z" />
+        <path d="M15 4c1 1 3 3 4 4" />
+      </>
+    ),
+    lightbulb: (
+      <>
+        <path d="M9 18h6" />
+        <path d="M10 22h4" />
+        <path d="M12 2a7 7 0 0 0-4 12v4h8v-4a7 7 0 0 0-4-12z" />
+      </>
+    ),
+    target: (
+      <>
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="12" cy="12" r="6" />
+        <circle cx="12" cy="12" r="2" />
+      </>
+    ),
+    globe: (
+      <>
+        <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+        <path d="M12 3v18" />
+        <path d="M3 12h18" />
+      </>
+    ),
   };
 
   return (

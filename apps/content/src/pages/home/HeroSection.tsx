@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Icon } from '@tribux/ui';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 
 function HeroSection(): React.JSX.Element {
@@ -13,7 +14,8 @@ function HeroSection(): React.JSX.Element {
           <div className="flex flex-col justify-center space-y-8">
             <div className="space-y-6">
               <div className="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary border border-primary/20">
-                🚀 Proyecto Académico UCR
+                <Icon name="rocket" size={16} className="mr-2" />
+                Proyecto Académico UCR
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">

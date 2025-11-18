@@ -1,5 +1,6 @@
 import React from 'react';
 import { MagicCard } from '@/components/ui/magic-card';
+import { Icon } from '@tribux/ui';
 
 function AboutSection(): React.JSX.Element {
   const teamMembers = [
@@ -21,17 +22,17 @@ function AboutSection(): React.JSX.Element {
     {
       title: "Innovación Tecnológica",
       description: "Aplicamos principios de economía computacional y tecnologías modernas para resolver problemas tributarios complejos.",
-      icon: "💡"
+      icon: "lightbulb"
     },
     {
       title: "Accesibilidad",
       description: "Facilitamos la inclusión digital de las mipymes en el nuevo sistema tributario, reduciendo barreras técnicas.",
-      icon: "🌍"
+      icon: "globe"
     },
     {
       title: "Precisión y Confiabilidad",
       description: "Nos comprometemos con la exactitud en el análisis de datos y la robustez de nuestras soluciones.",
-      icon: "🎯"
+      icon: "target"
     }
   ];
 
@@ -154,7 +155,9 @@ function AboutSection(): React.JSX.Element {
               gradientTo="#38bdf8"
             >
               <div className="p-8 text-center">
-                <div className="text-6xl mb-4">{value.icon}</div>
+                <div className="text-6xl mb-4">
+                  <Icon name={value.icon} size={48} className="mx-auto" />
+                </div>
                 <h4 className="text-2xl font-bold">{value.title}</h4>
                 <p className="text-muted-foreground leading-relaxed mt-4">
                   {value.description}
