@@ -1,12 +1,10 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Icon } from '@tribux/ui';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import ContactModal from '@/components/ui/ContactModal';
 import { useState } from 'react';
 
 function HeroSection(): React.JSX.Element {
-  const navigate = useNavigate();
   const [openContact, setOpenContact] = useState(false);
 
   return (

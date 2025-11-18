@@ -1,10 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { navigateToUrl } from 'single-spa';
 import { MagicCard } from '@/components/ui/magic-card';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 
 function PricingSection(): React.JSX.Element {
-  const navigate = useNavigate();
 
   const plans = [
     {
@@ -133,7 +132,7 @@ function PricingSection(): React.JSX.Element {
                         : 'border-2 border-primary/20 bg-transparent text-primary hover:bg-primary hover:text-primary-foreground'
                     }`}
                     variant={plan.popular ? 'default' : 'ghost'}
-                    onClick={() => navigate('/create-user')}
+                    onClick={() => navigateToUrl('/auth/create-user')}
                   >
                     {plan.buttonText}
                   </ShimmerButton>

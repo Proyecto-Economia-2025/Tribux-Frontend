@@ -1,9 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { navigateToUrl } from 'single-spa';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 
 function CTASection(): React.JSX.Element {
-  const navigate = useNavigate();
 
   return (
     <section className="py-20 bg-primary">
@@ -21,7 +20,7 @@ function CTASection(): React.JSX.Element {
           <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center items-center">
             <ShimmerButton
               className="h-12 px-8 text-base font-semibold bg-white text-primary hover:bg-white/90"
-              onClick={() => navigate('/create-user')}
+              onClick={() => navigateToUrl('/auth/create-user')}
             >
               Comenzar Prueba Gratuita
             </ShimmerButton>
