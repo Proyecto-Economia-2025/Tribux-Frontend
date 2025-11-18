@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { navigateToUrl } from 'single-spa'
 import { FileText, Plus, Eye, Download, Search, Filter, AlertCircle, Loader2 } from 'lucide-react'
 import Sidebar from '../../components/dashboard/Sidebar'
 import DashboardHeader from '../../components/dashboard/DashboardHeader'
@@ -7,7 +7,6 @@ import DashboardFooter from '../../components/dashboard/DashboardFooter'
 import { invoicesService, InvoiceSummary } from '../../services'
 
 export default function InvoicesListPage() {
-  const navigate = useNavigate()
   const [activeItem, setActiveItem] = useState('invoices')
   const [invoices, setInvoices] = useState<InvoiceSummary[]>([])
   const [loading, setLoading] = useState(true)
@@ -63,7 +62,7 @@ export default function InvoicesListPage() {
   }
 
   const handleViewInvoice = (invoice: InvoiceSummary) => {
-    navigate(`/invoices/view?id=${invoice.id}`)
+    navigateToUrl(`/invoices/view?id=${invoice.id}`)
   }
 
   const handleDownloadXml = async (invoice: InvoiceSummary) => {
@@ -155,7 +154,7 @@ export default function InvoicesListPage() {
                 <p className="text-gray-600 mt-2">Gestiona todas tus facturas electrónicas</p>
               </div>
               <button
-                onClick={() => navigate('/invoices/create')}
+                onClick={() => navigateToUrl('/invoices/create')}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center space-x-2 shadow-lg"
               >
                 <Plus className="w-5 h-5" />

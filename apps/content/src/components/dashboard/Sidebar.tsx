@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { navigateToUrl } from 'single-spa'
 import { Home, FileText, Plus, Eye, LogOut, ChevronRight } from 'lucide-react'
 
 interface SidebarProps {
@@ -8,7 +8,6 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ activeItem, onItemClick }: SidebarProps) {
-  const navigate = useNavigate()
   const [isHovered, setIsHovered] = useState(false)
 
   const menuItems = [
@@ -20,11 +19,11 @@ export default function Sidebar({ activeItem, onItemClick }: SidebarProps) {
 
   const handleItemClick = (item: typeof menuItems[0]) => {
     onItemClick(item.id)
-    navigate(item.path)
+    navigateToUrl(item.path)
   }
 
   const handleLogout = () => {
-    navigate('/auth/login')
+    navigateToUrl('/auth/login')
   }
 
   return (
