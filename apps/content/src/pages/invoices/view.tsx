@@ -4,7 +4,7 @@ import { Eye, Download, ArrowLeft, Loader2, AlertCircle, FileText, Calendar, Use
 import Sidebar from '../../components/dashboard/Sidebar'
 import DashboardHeader from '../../components/dashboard/DashboardHeader'
 import DashboardFooter from '../../components/dashboard/DashboardFooter'
-import { invoicesService, Invoice } from '../../services'
+import { invoicesService, Invoice, InvoiceLine } from '../../services'
 
 export default function InvoiceViewPage() {
   // Get invoice ID from URL query params
@@ -193,10 +193,10 @@ export default function InvoiceViewPage() {
                   <div className="flex items-center space-x-2">
                     <Calendar className="w-4 h-4 text-gray-500" />
                     <span className="text-sm text-gray-600">
-                      {new Date(invoice.createdAt).toLocaleDateString()}
+                      {invoice.fechaEmision ? new Date(invoice.fechaEmision).toLocaleDateString() : 'N/A'}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-600">Estado: <span className="font-medium">{invoice.status}</span></p>
+                  <p className="text-sm text-gray-600">Estado: <span className="font-medium">{invoice.estado || 'draft'}</span></p>
                   <p className="text-sm text-gray-600">Clave: <span className="font-mono text-xs">{invoice.clave}</span></p>
                 </div>
               </div>
@@ -236,7 +236,7 @@ export default function InvoiceViewPage() {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {invoice.lines?.map((line, index) => (
+                    {invoice.invoiceLines && invoice.invoiceLines.map((line: InvoiceLine, index: number) => (
                       <tr key={index} className="hover:bg-gray-50">
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                           {line.prodCodigo}
@@ -254,10 +254,10 @@ export default function InvoiceViewPage() {
                           ₡{line.precioUnitario.toLocaleString()}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          ₡{line.descuentos.toLocaleString()}
+                          ₡{(line.descuentos || 0).toLocaleString()}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          ₡{((line.cantidad * line.precioUnitario) - line.descuentos).toLocaleString()}
+                          ₡{((line.cantidad * line.precioUnitario) - (line.descuentos || 0)).toLocaleString()}
                         </td>
                       </tr>
                     ))}
@@ -271,16 +271,16 @@ export default function InvoiceViewPage() {
                   <div className="w-64 space-y-2">
                     <div className="flex justify-between">
                       <span className="text-gray-600">Subtotal:</span>
-                      <span className="font-medium">₡{invoice.subtotal?.toLocaleString()}</span>
+                      <span className="font-medium">₡{(invoice.totalVentaNeta || 0).toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">IVA (13%):</span>
-                      <span className="font-medium">₡{invoice.iva?.toLocaleString()}</span>
+                      <span className="font-medium">₡{(invoice.totalIva || 0).toLocaleString()}</span>
                     </div>
                     <div className="border-t border-gray-300 pt-2 flex justify-between">
                       <span className="text-lg font-semibold text-gray-900">Total:</span>
                       <span className="text-lg font-bold text-gray-900">
-                        ₡{invoice.total?.toLocaleString()}
+                        ₡{(invoice.totalComprobante || 0).toLocaleString()}
                       </span>
                     </div>
                   </div>
