@@ -11,8 +11,18 @@ export interface ActivityCode {
 export const activityCodesService = {
   async getAll(): Promise<ActivityCode[]> {
     try {
-      const response = await api.get<ActivityCode[]>('/ActivityCodes')
-      return response.data
+      const response = await api.get<any>('/ActivityCodes')
+      // Handle .NET JSON serialization format with $values
+      let codes = response.data
+      
+      if (codes?.$values && Array.isArray(codes.$values)) {
+        codes = codes.$values
+      } else if (!Array.isArray(codes)) {
+        console.warn('API response is not an array:', response.data)
+        return []
+      }
+      
+      return codes
     } catch (error) {
       console.error('Error fetching activity codes:', error)
       throw error
@@ -21,8 +31,15 @@ export const activityCodesService = {
 
   async getByCode(code: string): Promise<ActivityCode> {
     try {
-      const response = await api.get<ActivityCode>(`/ActivityCodes/${code}`)
-      return response.data
+      const response = await api.get<any>(`/ActivityCodes/${code}`)
+      // Handle .NET JSON serialization format
+      let activityCode = response.data
+      
+      if (activityCode?.$values) {
+        activityCode = activityCode.$values[0]
+      }
+      
+      return activityCode
     } catch (error) {
       console.error('Error fetching activity code:', error)
       throw error
@@ -33,8 +50,18 @@ export const activityCodesService = {
 export const companiesService = {
   async getAll(): Promise<Company[]> {
     try {
-      const response = await api.get<Company[]>('/Companies')
-      return response.data
+      const response = await api.get<any>('/Companies')
+      // Handle .NET JSON serialization format with $values
+      let companies = response.data
+      
+      if (companies?.$values && Array.isArray(companies.$values)) {
+        companies = companies.$values
+      } else if (!Array.isArray(companies)) {
+        console.warn('API response is not an array:', response.data)
+        return []
+      }
+      
+      return companies
     } catch (error) {
       console.error('Error fetching companies:', error)
       throw error
@@ -43,8 +70,15 @@ export const companiesService = {
 
   async getById(id: number): Promise<Company> {
     try {
-      const response = await api.get<Company>(`/Companies/${id}`)
-      return response.data
+      const response = await api.get<any>(`/Companies/${id}`)
+      // Handle .NET JSON serialization format
+      let company = response.data
+      
+      if (company?.$values) {
+        company = company.$values[0]
+      }
+      
+      return company
     } catch (error) {
       console.error('Error fetching company:', error)
       throw error

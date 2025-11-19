@@ -134,11 +134,13 @@ export const invoicesService = {
   async getAll(): Promise<InvoiceSummary[]> {
     try {
       const response = await api.get<any>('/Invoices')
-      // Handle both direct array response and wrapped response
-      const invoices = Array.isArray(response.data) ? response.data : response.data?.data || []
+      // Handle .NET JSON serialization format with $values
+      let invoices = response.data
       
-      if (!Array.isArray(invoices)) {
-        console.warn('API response is not an array:', response.data)
+      if (invoices?.$values && Array.isArray(invoices.$values)) {
+        invoices = invoices.$values
+      } else if (!Array.isArray(invoices)) {
+        console.warn('API response is not an array or wrapped correctly:', response.data)
         return []
       }
 
@@ -275,8 +277,16 @@ export const invoicesService = {
   async getCompanies(): Promise<Company[]> {
     try {
       const response = await api.get<any>('/Companies')
-      // Handle both direct array response and wrapped response
-      const companies = Array.isArray(response.data) ? response.data : response.data?.data || []
+      // Handle .NET JSON serialization format with $values
+      let companies = response.data
+      
+      if (companies?.$values && Array.isArray(companies.$values)) {
+        companies = companies.$values
+      } else if (!Array.isArray(companies)) {
+        console.warn('API response is not an array:', response.data)
+        return []
+      }
+      
       return companies
     } catch (error) {
       console.error('Error fetching companies:', error)
@@ -287,8 +297,13 @@ export const invoicesService = {
   async getCompanyById(id: number): Promise<Company> {
     try {
       const response = await api.get<any>(`/Companies/${id}`)
-      // Handle both direct object response and wrapped response
-      const company = response.data?.data || response.data
+      // Handle .NET JSON serialization format
+      let company = response.data
+      
+      if (company?.$values) {
+        company = company.$values[0]
+      }
+      
       return company
     } catch (error) {
       console.error('Error fetching company:', error)

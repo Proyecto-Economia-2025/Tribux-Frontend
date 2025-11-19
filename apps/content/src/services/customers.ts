@@ -16,8 +16,18 @@ export interface CreateCustomerRequest {
 export const customersService = {
   async getAll(): Promise<Customer[]> {
     try {
-      const response = await api.get<Customer[]>('/Customers')
-      return response.data
+      const response = await api.get<any>('/Customers')
+      // Handle .NET JSON serialization format with $values
+      let customers = response.data
+      
+      if (customers?.$values && Array.isArray(customers.$values)) {
+        customers = customers.$values
+      } else if (!Array.isArray(customers)) {
+        console.warn('API response is not an array:', response.data)
+        return []
+      }
+      
+      return customers
     } catch (error) {
       console.error('Error fetching customers:', error)
       throw error
@@ -26,8 +36,15 @@ export const customersService = {
 
   async getById(id: number): Promise<Customer> {
     try {
-      const response = await api.get<Customer>(`/Customers/${id}`)
-      return response.data
+      const response = await api.get<any>(`/Customers/${id}`)
+      // Handle .NET JSON serialization format
+      let customer = response.data
+      
+      if (customer?.$values) {
+        customer = customer.$values[0]
+      }
+      
+      return customer
     } catch (error) {
       console.error('Error fetching customer:', error)
       throw error
