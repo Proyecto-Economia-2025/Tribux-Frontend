@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { navigateToUrl } from 'single-spa'
-import { Plus, AlertCircle, Loader2 } from 'lucide-react'
+import { Plus, AlertCircle, Loader2, LayoutGrid, LayoutList } from 'lucide-react'
 import Sidebar from '../../components/dashboard/Sidebar'
 import DashboardHeader from '../../components/dashboard/DashboardHeader'
 import DashboardFooter from '../../components/dashboard/DashboardFooter'
-import { InvoiceTableRow, InvoiceTableHeader, InvoiceFilterBar, InvoiceEmptyState } from '../../components/invoices'
+import { InvoiceTableRow, InvoiceTableHeader, InvoiceFilterBar, InvoiceEmptyState, InvoiceCard, InvoicePageHeader } from '../../components/invoices'
 import { invoicesService, InvoiceSummary } from '../../services'
 
 export default function InvoicesListPage() {
@@ -14,6 +14,7 @@ export default function InvoicesListPage() {
   const [error, setError] = useState<string | null>(null)
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState<string>('all')
+  const [viewMode, setViewMode] = useState<'table' | 'grid'>('table')
 
   useEffect(() => {
     loadInvoices()
@@ -151,19 +152,7 @@ export default function InvoicesListPage() {
         <main className="flex-1 overflow-auto">
           <div className="p-8 h-full">
             {/* Header */}
-            <div className="flex justify-between items-center mb-8">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">Lista de Facturas</h1>
-                <p className="text-gray-600 mt-2">Gestiona todas tus facturas electrónicas</p>
-              </div>
-              <button
-                onClick={() => navigateToUrl('/invoices/create')}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center space-x-2 shadow-lg"
-              >
-                <Plus className="w-5 h-5" />
-                <span>Crear Factura</span>
-              </button>
-            </div>
+            <InvoicePageHeader onCreateInvoice={() => navigateToUrl('/invoices/create')} />
 
             {/* Filters */}
             <InvoiceFilterBar
@@ -173,31 +162,79 @@ export default function InvoicesListPage() {
               onStatusFilterChange={setStatusFilter}
             />
 
-            {/* Invoices Table */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <InvoiceTableHeader />
-                  <tbody className="divide-y divide-gray-200">
-                    {filteredInvoices.map((invoice) => (
-                      <InvoiceTableRow
-                        key={invoice.id}
-                        invoice={invoice}
-                        onView={handleViewInvoice}
-                        onDownloadXml={handleDownloadXml}
-                        onDownloadPdf={handleDownloadPdf}
-                        statusColorClass={getStatusColor(invoice.status)}
-                        statusText={getStatusText(invoice.status)}
-                      />
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {filteredInvoices.length === 0 && (
-                <InvoiceEmptyState hasSearchOrFilter={!!searchTerm || statusFilter !== 'all'} />
-              )}
+            {/* View Mode Toggle */}
+            <div className="mb-6 flex justify-end space-x-2">
+              <button
+                onClick={() => setViewMode('table')}
+                className={`p-2 rounded-lg transition-colors ${
+                  viewMode === 'table'
+                    ? 'bg-blue-100 text-blue-600'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+                title="Vista de tabla"
+              >
+                <LayoutList className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => setViewMode('grid')}
+                className={`p-2 rounded-lg transition-colors ${
+                  viewMode === 'grid'
+                    ? 'bg-blue-100 text-blue-600'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+                title="Vista de grid"
+              >
+                <LayoutGrid className="w-5 h-5" />
+              </button>
             </div>
+
+            {/* Invoices Table/Grid View */}
+            {viewMode === 'table' ? (
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <InvoiceTableHeader />
+                    <tbody className="divide-y divide-gray-200">
+                      {filteredInvoices.map((invoice) => (
+                        <InvoiceTableRow
+                          key={invoice.id}
+                          invoice={invoice}
+                          onView={handleViewInvoice}
+                          onDownloadXml={handleDownloadXml}
+                          onDownloadPdf={handleDownloadPdf}
+                          statusColorClass={getStatusColor(invoice.status)}
+                          statusText={getStatusText(invoice.status)}
+                        />
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {filteredInvoices.length === 0 && (
+                  <InvoiceEmptyState hasSearchOrFilter={!!searchTerm || statusFilter !== 'all'} />
+                )}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {filteredInvoices.length > 0 ? (
+                  filteredInvoices.map((invoice) => (
+                    <InvoiceCard
+                      key={invoice.id}
+                      invoice={invoice}
+                      onView={handleViewInvoice}
+                      onDownloadXml={handleDownloadXml}
+                      onDownloadPdf={handleDownloadPdf}
+                      statusColorClass={getStatusColor(invoice.status)}
+                      statusText={getStatusText(invoice.status)}
+                    />
+                  ))
+                ) : (
+                  <div className="col-span-full">
+                    <InvoiceEmptyState hasSearchOrFilter={!!searchTerm || statusFilter !== 'all'} />
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </main>
       </div>
