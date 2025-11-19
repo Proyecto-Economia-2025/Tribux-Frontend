@@ -4,7 +4,7 @@ import { Plus, AlertCircle, Loader2, LayoutGrid, LayoutList } from 'lucide-react
 import Sidebar from '../../components/dashboard/Sidebar'
 import DashboardHeader from '../../components/dashboard/DashboardHeader'
 import DashboardFooter from '../../components/dashboard/DashboardFooter'
-import { InvoiceTableRow, InvoiceTableHeader, InvoiceFilterBar, InvoiceEmptyState, InvoiceCard, InvoicePageHeader } from '../../components/invoices'
+import { InvoiceTableRow, InvoiceTableHeader, InvoiceFilterBar, InvoiceEmptyState, InvoiceCard, InvoicePageHeader, InvoiceStats } from '../../components/invoices'
 import { invoicesService, InvoiceSummary } from '../../services'
 
 export default function InvoicesListPage() {
@@ -153,6 +153,14 @@ export default function InvoicesListPage() {
           <div className="p-8 h-full">
             {/* Header */}
             <InvoicePageHeader onCreateInvoice={() => navigateToUrl('/invoices/create')} />
+
+            {/* Stats */}
+            <InvoiceStats
+              totalInvoices={invoices.length}
+              totalAmount={invoices.reduce((sum, inv) => sum + inv.total, 0)}
+              draftCount={invoices.filter(inv => inv.status === 'draft').length}
+              sentCount={invoices.filter(inv => inv.status === 'sent').length}
+            />
 
             {/* Filters */}
             <InvoiceFilterBar
