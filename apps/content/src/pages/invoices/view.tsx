@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { navigateToUrl } from 'single-spa'
 import { Eye, Download, ArrowLeft, Loader2, AlertCircle, FileText, Calendar, User, Building } from 'lucide-react'
 import Sidebar from '../../components/dashboard/Sidebar'
 import DashboardHeader from '../../components/dashboard/DashboardHeader'
@@ -7,8 +7,13 @@ import DashboardFooter from '../../components/dashboard/DashboardFooter'
 import { invoicesService, Invoice } from '../../services'
 
 export default function InvoiceViewPage() {
-  const [searchParams] = useSearchParams()
-  const invoiceId = searchParams.get('id')
+  // Get invoice ID from URL query params
+  const getInvoiceId = () => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('id')
+  }
+
+  const invoiceId = getInvoiceId()
 
   const [activeItem, setActiveItem] = useState('view')
   const [invoice, setInvoice] = useState<Invoice | null>(null)
@@ -40,7 +45,16 @@ export default function InvoiceViewPage() {
     if (!invoice) return
 
     try {
-      await invoicesService.downloadXML(invoice.id)
+      const xml = await invoicesService.getXml(invoice.id)
+      const blob = new Blob([xml], { type: 'application/xml' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `Factura_${invoice.numeroConsecutivo}.xml`
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(url)
     } catch (error) {
       console.error('Error downloading XML:', error)
       alert('Error al descargar el XML')
@@ -51,7 +65,15 @@ export default function InvoiceViewPage() {
     if (!invoice) return
 
     try {
-      await invoicesService.downloadPDF(invoice.id)
+      const pdfBlob = await invoicesService.getPdf(invoice.id)
+      const url = URL.createObjectURL(pdfBlob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `Factura_${invoice.numeroConsecutivo}.pdf`
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(url)
     } catch (error) {
       console.error('Error downloading PDF:', error)
       alert('Error al descargar el PDF')
@@ -105,7 +127,7 @@ export default function InvoiceViewPage() {
             <div className="flex justify-between items-center mb-8">
               <div className="flex items-center space-x-4">
                 <button
-                  onClick={() => window.history.back()}
+                  onClick={() => navigateToUrl('/invoices')}
                   className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors"
                 >
                   <ArrowLeft className="w-5 h-5" />
