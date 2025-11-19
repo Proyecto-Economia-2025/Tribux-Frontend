@@ -20,17 +20,20 @@ export default function Dashboard() {
         setLoading(true)
         setError(null)
 
+        console.log('Loading dashboard data...')
+        
         // Load metrics and monthly data in parallel
         const [statsSummary, statsByMonth] = await Promise.all([
           invoicesService.getStatsSummary(),
           invoicesService.getStatsByMonth()
         ])
 
+        console.log('Dashboard data loaded successfully:', { statsSummary, statsByMonth })
         setMetrics(statsSummary)
         setMonthlyData(statsByMonth)
       } catch (err) {
         console.error('Error loading dashboard data:', err)
-        setError('Error al cargar los datos del dashboard')
+        setError('Error al cargar los datos del dashboard. Usando datos simulados.')
         // Fallback to mock data
         setMetrics({
           totalInvoices: 156,

@@ -133,8 +133,16 @@ export interface MonthlyStats {
 export const invoicesService = {
   async getAll(): Promise<InvoiceSummary[]> {
     try {
-      const response = await api.get<Invoice[]>('/Invoices')
-      return response.data.map(invoice => ({
+      const response = await api.get<any>('/Invoices')
+      // Handle both direct array response and wrapped response
+      const invoices = Array.isArray(response.data) ? response.data : response.data?.data || []
+      
+      if (!Array.isArray(invoices)) {
+        console.warn('API response is not an array:', response.data)
+        return []
+      }
+
+      return invoices.map((invoice: Invoice) => ({
         id: invoice.id,
         consecutiveNumber: invoice.numeroConsecutivo || '',
         client: invoice.customer?.name || 'Cliente desconocido',
@@ -225,12 +233,15 @@ export const invoicesService = {
       const invoices = await this.getAll()
       const today = new Date().toDateString()
 
-      return {
+      const stats = {
         totalInvoices: invoices.length,
         totalInvoiced: invoices.reduce((sum, inv) => sum + inv.total, 0),
         totalIVA: invoices.reduce((sum, inv) => sum + (inv.total * 0.13), 0), // Assuming 13% IVA
         invoicesToday: invoices.filter(inv => new Date(inv.date).toDateString() === today).length
       }
+      
+      console.log('Stats summary calculated:', stats)
+      return stats
     } catch (error) {
       console.error('Error fetching stats summary:', error)
       throw error
@@ -247,10 +258,13 @@ export const invoicesService = {
         monthlyData[month] = (monthlyData[month] || 0) + invoice.total
       })
 
-      return Object.entries(monthlyData).map(([month, amount]) => ({
+      const stats = Object.entries(monthlyData).map(([month, amount]) => ({
         month,
         amount
       }))
+      
+      console.log('Monthly stats calculated:', stats)
+      return stats
     } catch (error) {
       console.error('Error fetching monthly stats:', error)
       throw error
@@ -260,8 +274,10 @@ export const invoicesService = {
   // Additional utility methods
   async getCompanies(): Promise<Company[]> {
     try {
-      const response = await api.get<Company[]>('/Companies')
-      return response.data
+      const response = await api.get<any>('/Companies')
+      // Handle both direct array response and wrapped response
+      const companies = Array.isArray(response.data) ? response.data : response.data?.data || []
+      return companies
     } catch (error) {
       console.error('Error fetching companies:', error)
       throw error
@@ -270,8 +286,10 @@ export const invoicesService = {
 
   async getCompanyById(id: number): Promise<Company> {
     try {
-      const response = await api.get<Company>(`/Companies/${id}`)
-      return response.data
+      const response = await api.get<any>(`/Companies/${id}`)
+      // Handle both direct object response and wrapped response
+      const company = response.data?.data || response.data
+      return company
     } catch (error) {
       console.error('Error fetching company:', error)
       throw error
