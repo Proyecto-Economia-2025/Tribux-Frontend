@@ -17,6 +17,7 @@ export default function InvoicesListPage() {
   const [viewMode, setViewMode] = useState<'table' | 'grid'>('table')
 
   useEffect(() => {
+    console.log('InvoicesListPage mounted')
     loadInvoices()
   }, [])
 
@@ -104,7 +105,7 @@ export default function InvoicesListPage() {
 
   if (loading) {
     return (
-      <div className="h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col">
         <DashboardHeader />
         <div className="flex flex-1 overflow-hidden">
           <Sidebar activeItem={activeItem} onItemClick={setActiveItem} />
@@ -122,7 +123,7 @@ export default function InvoicesListPage() {
 
   if (error) {
     return (
-      <div className="h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col">
         <DashboardHeader />
         <div className="flex flex-1 overflow-hidden">
           <Sidebar activeItem={activeItem} onItemClick={setActiveItem} />
@@ -145,12 +146,12 @@ export default function InvoicesListPage() {
   }
 
   return (
-    <div className="h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col">
       <DashboardHeader />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar activeItem={activeItem} onItemClick={setActiveItem} />
-        <main className="flex-1 overflow-auto">
-          <div className="p-8 h-full">
+        <main className="flex-1 overflow-auto flex flex-col">
+          <div className="p-8 flex-1">
             {/* Header */}
             <InvoicePageHeader onCreateInvoice={() => navigateToUrl('/invoices/create')} />
 
