@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { navigateToUrl } from 'single-spa'
-import { FileText, Plus, Eye, Download, Search, Filter, AlertCircle, Loader2 } from 'lucide-react'
+import { Plus, AlertCircle, Loader2 } from 'lucide-react'
 import Sidebar from '../../components/dashboard/Sidebar'
 import DashboardHeader from '../../components/dashboard/DashboardHeader'
 import DashboardFooter from '../../components/dashboard/DashboardFooter'
+import { InvoiceTableRow, InvoiceTableHeader, InvoiceFilterBar, InvoiceEmptyState } from '../../components/invoices'
 import { invoicesService, InvoiceSummary } from '../../services'
 
 export default function InvoicesListPage() {
@@ -22,7 +23,9 @@ export default function InvoicesListPage() {
     try {
       setLoading(true)
       setError(null)
+      console.log('Loading invoices list...')
       const data = await invoicesService.getAll()
+      console.log('Invoices loaded:', data)
       setInvoices(data)
     } catch (err) {
       console.error('Error loading invoices:', err)
@@ -163,134 +166,36 @@ export default function InvoicesListPage() {
             </div>
 
             {/* Filters */}
-            <div className="bg-white rounded-xl shadow-lg p-6 mb-6 border border-gray-100">
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="flex-1">
-                  <div className="relative">
-                    <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                    <input
-                      type="text"
-                      placeholder="Buscar por número, cliente o clave..."
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Filter className="w-5 h-5 text-gray-400" />
-                  <select
-                    value={statusFilter}
-                    onChange={(e) => setStatusFilter(e.target.value)}
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="all">Todos los estados</option>
-                    <option value="draft">Borrador</option>
-                    <option value="sent">Enviada</option>
-                    <option value="accepted">Aceptada</option>
-                    <option value="rejected">Rechazada</option>
-                  </select>
-                </div>
-              </div>
-            </div>
+            <InvoiceFilterBar
+              searchTerm={searchTerm}
+              onSearchChange={setSearchTerm}
+              statusFilter={statusFilter}
+              onStatusFilterChange={setStatusFilter}
+            />
 
             {/* Invoices Table */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-gray-50 border-b border-gray-200">
-                    <tr>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Número
-                      </th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Cliente
-                      </th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Fecha
-                      </th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Total
-                      </th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Estado
-                      </th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Acciones
-                      </th>
-                    </tr>
-                  </thead>
+                  <InvoiceTableHeader />
                   <tbody className="divide-y divide-gray-200">
                     {filteredInvoices.map((invoice) => (
-                      <tr key={invoice.id} className="hover:bg-gray-50 transition-colors duration-150">
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm font-medium text-gray-900">
-                            {invoice.consecutiveNumber}
-                          </div>
-                          {invoice.clave && (
-                            <div className="text-xs text-gray-500">
-                              {invoice.clave.substring(0, 21)}...
-                            </div>
-                          )}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">{invoice.client}</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">{invoice.date}</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm font-medium text-gray-900">
-                            ₡{invoice.total.toLocaleString()}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(invoice.status)}`}>
-                            {getStatusText(invoice.status)}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                          <div className="flex items-center space-x-2">
-                            <button
-                              onClick={() => handleViewInvoice(invoice)}
-                              className="text-blue-600 hover:text-blue-900 p-1 rounded hover:bg-blue-50 transition-colors"
-                              title="Ver factura"
-                            >
-                              <Eye className="w-4 h-4" />
-                            </button>
-                            <button
-                              onClick={() => handleDownloadXml(invoice)}
-                              className="text-green-600 hover:text-green-900 p-1 rounded hover:bg-green-50 transition-colors"
-                              title="Descargar XML"
-                            >
-                              <Download className="w-4 h-4" />
-                            </button>
-                            <button
-                              onClick={() => handleDownloadPdf(invoice)}
-                              className="text-purple-600 hover:text-purple-900 p-1 rounded hover:bg-purple-50 transition-colors"
-                              title="Descargar PDF"
-                            >
-                              <FileText className="w-4 h-4" />
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
+                      <InvoiceTableRow
+                        key={invoice.id}
+                        invoice={invoice}
+                        onView={handleViewInvoice}
+                        onDownloadXml={handleDownloadXml}
+                        onDownloadPdf={handleDownloadPdf}
+                        statusColorClass={getStatusColor(invoice.status)}
+                        statusText={getStatusText(invoice.status)}
+                      />
                     ))}
                   </tbody>
                 </table>
               </div>
 
               {filteredInvoices.length === 0 && (
-                <div className="text-center py-12">
-                  <FileText className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">No se encontraron facturas</h3>
-                  <p className="text-gray-500">
-                    {searchTerm || statusFilter !== 'all'
-                      ? 'Intenta ajustar los filtros de búsqueda'
-                      : 'Comienza creando tu primera factura'
-                    }
-                  </p>
-                </div>
+                <InvoiceEmptyState hasSearchOrFilter={!!searchTerm || statusFilter !== 'all'} />
               )}
             </div>
           </div>

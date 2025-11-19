@@ -4,9 +4,7 @@ import HomePage from './pages/home';
 import { LoginPage, CreateUserPage, PasswordRecoveryRequestPage } from './pages/auth';
 import Menu from './pages/menu';
 import Dashboard from './pages/dashboard';
-import InvoicesList from './pages/invoices';
-import InvoiceCreate from './pages/invoices/create';
-import InvoiceView from './pages/invoices/view';
+import { InvoicesList, InvoiceCreate, InvoiceView } from './pages/invoices';
 
 function App(): React.JSX.Element {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -77,7 +75,7 @@ function App(): React.JSX.Element {
       if (path === '/invoices/create') {
         return <InvoiceCreate />;
       }
-      if (path.startsWith('/invoices/view/')) {
+      if (path.startsWith('/invoices/view')) {
         return <InvoiceView />;
       }
 
