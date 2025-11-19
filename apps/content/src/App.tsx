@@ -4,7 +4,9 @@ import HomePage from './pages/home';
 import { LoginPage, CreateUserPage, PasswordRecoveryRequestPage } from './pages/auth';
 import Menu from './pages/menu';
 import Dashboard from './pages/dashboard';
-import { InvoicesList, InvoiceCreate, InvoiceView } from './pages/invoices';
+import InvoicesList from './pages/invoices/InvoicesListPage';
+import InvoiceCreate from './pages/invoices/create';
+import InvoiceView from './pages/invoices/view';
 
 function App(): React.JSX.Element {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
