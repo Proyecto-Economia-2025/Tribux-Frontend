@@ -11,14 +11,14 @@ interface InvoiceTableRowProps {
   statusText: string
 }
 
-export const InvoiceTableRow: React.FC<InvoiceTableRowProps> = ({
+export default function InvoiceTableRow({
   invoice,
   onView,
   onDownloadXml,
   onDownloadPdf,
   statusColorClass,
   statusText
-}) => {
+}: InvoiceTableRowProps) {
   return (
     <tr className="hover:bg-gray-50 transition-colors duration-150">
       <td className="px-6 py-4 whitespace-nowrap">

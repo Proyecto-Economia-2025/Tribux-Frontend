@@ -8,12 +8,12 @@ interface InvoiceFilterBarProps {
   onStatusFilterChange: (value: string) => void
 }
 
-export const InvoiceFilterBar: React.FC<InvoiceFilterBarProps> = ({
+export default function InvoiceFilterBar({
   searchTerm,
   onSearchChange,
   statusFilter,
   onStatusFilterChange
-}) => {
+}: InvoiceFilterBarProps) {
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 mb-6 border border-gray-100">
       <div className="flex flex-col md:flex-row gap-4">

@@ -11,14 +11,14 @@ interface InvoiceCardProps {
   statusText: string
 }
 
-export const InvoiceCard: React.FC<InvoiceCardProps> = ({
+export default function InvoiceCard({
   invoice,
   onView,
   onDownloadXml,
   onDownloadPdf,
   statusColorClass,
   statusText
-}) => {
+}: InvoiceCardProps) {
   return (
     <div className="bg-white rounded-lg shadow p-4 border border-gray-200 hover:shadow-lg transition-shadow">
       <div className="flex justify-between items-start mb-3">

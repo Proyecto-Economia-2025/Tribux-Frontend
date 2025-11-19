@@ -5,7 +5,7 @@ interface InvoiceHeaderProps {
   onCreateInvoice: () => void
 }
 
-export const InvoicePageHeader: React.FC<InvoiceHeaderProps> = ({ onCreateInvoice }) => {
+export default function InvoicePageHeader({ onCreateInvoice }: InvoiceHeaderProps) {
   return (
     <div className="flex justify-between items-center mb-8">
       <div>

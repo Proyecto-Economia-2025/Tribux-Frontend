@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const InvoiceTableHeader: React.FC = () => {
+export default function InvoiceTableHeader() {
   return (
     <thead className="bg-gray-50 border-b border-gray-200">
       <tr>

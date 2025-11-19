@@ -8,12 +8,12 @@ interface InvoiceStatsProps {
   sentCount: number
 }
 
-export const InvoiceStats: React.FC<InvoiceStatsProps> = ({
+export default function InvoiceStats({
   totalInvoices,
   totalAmount,
   draftCount,
   sentCount
-}) => {
+}: InvoiceStatsProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
       <div className="bg-white rounded-lg shadow p-4 border border-gray-200">

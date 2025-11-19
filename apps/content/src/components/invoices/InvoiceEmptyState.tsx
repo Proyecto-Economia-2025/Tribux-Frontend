@@ -5,7 +5,7 @@ interface InvoiceEmptyStateProps {
   hasSearchOrFilter: boolean
 }
 
-export const InvoiceEmptyState: React.FC<InvoiceEmptyStateProps> = ({ hasSearchOrFilter }) => {
+export default function InvoiceEmptyState({ hasSearchOrFilter }: InvoiceEmptyStateProps) {
   return (
     <div className="text-center py-12">
       <FileText className="w-12 h-12 text-gray-400 mx-auto mb-4" />
